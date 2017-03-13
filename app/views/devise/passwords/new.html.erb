@@ -1,12 +1,20 @@
-<div class="authform">
-  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :role => 'form'}) do |f| %>
-    <h3>Forgot your password?</h3>
-    <p>We'll send password reset instructions.</p>
-    <%= devise_error_messages! %>
-    <div class="form-group">
-      <%= f.label :email %>
-      <%= f.email_field :email, :autofocus => true, class: 'form-control' %>
+v class="container-small">
+  <div class="card">
+    <div class="card-block" style="background:#fff;">
+      <div class="form-header blue-gradient">
+        <h3><i class="fa fa-lock faa-shake animated"></i></h3>
+      </div>
+      <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :role => 'form'}) do |f| %>
+        <h3 class="text-center">Forgot your password?</h3>
+        <p class="text-center">We'll send password reset instructions.</p>
+        <%= devise_error_messages! %>
+        <div class="md-form">
+          <i class="fa fa-envelope fa-2x prefix"></i>
+          <%= f.email_field :email, :autofocus => true, class: 'form-control', placeholder: "Enter your email" %>
+        </div>
+         <%= f.submit 'Reset Password', :class => 'btn btn-block blue-gradient' %>
+      <% end %>
     </div>
-     <%= f.submit 'Reset Password', :class => 'button right' %>
-  <% end %>
-</div>
+  </div>
+</div><br><br>
+<%= link_to "", root_path, class: "fa fa-hand-o-left fa-2x faa-horizontal animated" %>

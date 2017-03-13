@@ -7,14 +7,22 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
     <%= csrf_meta_tags %>
+ 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- CSS -->
+    <link href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled.min.css" rel="stylesheet">
   </head>
-  <body>
+  <body class="fixed-sn cyan-skin">
     <header>
       <%= render 'layouts/navigation' %>
     </header>
-    <main role="main">
+    <div class="container">
        <%= render 'layouts/messages' %>
        <%= yield %>
-    </main>
+      <%= render 'layouts/footer' %> 
+      <%= render 'layouts/scripts' %>
+       
+    </div>
   </body>
 </html>
