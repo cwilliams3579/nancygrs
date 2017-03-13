@@ -1,0 +1,108 @@
+<div class="container">
+  <!--Section: Magazine v.2-->
+  <section class="section magazine-section">
+
+    <!--Section heading-->
+    <h1 class="section-heading text-white">Exercises</h1>
+    <div class="star-rating" data-score= <%= @avg_rating %> ></div>
+    <!--Section description-->
+    <p class="section-description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    <!--First row-->
+    <div class="row text-left">
+
+      <!--First column-->
+      <div class="col-lg-6 col-md-12">
+
+        <!--Featured news-->
+        <div class="single-news">
+
+          <!--Image-->
+          <div class="view overlay hm-white-slight">
+            <%= image_tag @exercise.image.url if @exercise.image? %>
+            <!-- <iframe width="100%" height="480" src="https://www.youtube.com/embed/7qHInWs_3mY" frameborder="0" allowfullscreen></iframe> -->
+            <a>
+              <div class="mask"></div>
+            </a>
+          </div>
+
+          <!--Excerpt-->
+          <div class="news-data form-input">
+            <h5 class="form-input"><i class="fa fa-line-chart"></i>Lower back exercise</h5>
+            <p><strong class="form-input"><i class="fa fa-clock-o faa-tada animated"></i>&nbsp; Posted  <%= time_ago_in_words(@exercise.created_at) %> ago</strong></p>
+          </div>
+
+          <h3><a class="text-white"><%= @exercise.workout %></a></h3>
+
+          <p class="form-input">
+            <i class="fa fa-clock-o faa-tada animated"></i>&nbsp;<%= @exercise.duration_in_min %> minutes
+          </p>
+          <% @reviews.each do |review| %>
+
+          <% end %>
+        </div>
+        <!--/Featured news-->
+
+      </div>
+      <!--/First column-->
+
+      <!--Second column-->
+      <div class="col-lg-6 col-md-12">
+
+      <% if @reviews.blank? %>
+        <h3>No reviews yet. Be the the first to write one.</h3>
+        <% else %>
+          <% @reviews.each do |review| %>
+            <!--Small news-->
+            <div class="single-news">
+
+              <div class="row">
+                <div class="col-md-3">
+
+                  <!--Image-->
+                  <div class="view overlay hm-white-slight">
+                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(77).jpg">
+                    <a>
+                      <div class="mask"></div>
+                    </a>
+                  </div>
+                  <!--Excerpt-->
+                  <div class="col-md-9">
+                    <div class="star-rating" data-score= <%= @avg_rating %> ></div>
+                    <a><%= review.comment %>
+                      <i class="fa fa-angle-right"></i>
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+              <!--/Small news-->
+            </div>
+          <% end %>
+        <% end %>
+        <!--/Second column-->
+
+      </div>
+      <!--/First row-->
+      <% if user_signed_in? %>
+        <div class="btn-group">
+          <%= link_to '',  new_exercise_review_path(@exercise), class: "fa fa-plus fa-2x faa-tada animated text-primary" %>&nbsp; &nbsp; &nbsp;
+          <%= link_to '',  edit_exercise_review_path(@exercise), class: "fa fa-pencil fa-2x faa-wrench animated-hover text-warning" %>
+        </div>
+      <% end %>
+
+    </section>
+    <!--/Section: Magazine v.2-->
+
+</div>
+<%= link_to '',  :back, class: "fa fa-hand-o-left fa-2x faa-horizontal animated primary-font" %>
+
+<script type="text/javascript">
+  $('.star-rating').raty({
+    path: 'https://s3.amazonaws.com/yelp-clone-rails/stars',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score')
+    }
+  });
+</script>

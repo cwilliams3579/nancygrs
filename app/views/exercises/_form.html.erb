@@ -1,0 +1,63 @@
+<br><br><br>
+<div class="container-small">
+  <div class="card">
+    <div class="card-block" style="background:white;">
+      <div class="form-header purple-gradient">
+        <h3><%= current_user.full_name %></h3>
+      </div>
+      <%= form_for([@user, @exercise], :html => { multipart: true }) do |f| %>
+        <% if @exercise.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@exercise.errors.count, "error") %> prohibited this exercise from being saved:</h2>
+            <ul>
+            <% @exercise.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="md-form">
+          <i class="fa fa-camera-retro prefix"></i>
+          <%= image_tag(@exercise.image) if @exercise.image? %>
+          <%= f.file_field :image %>
+          <%= f.hidden_field :image_cache %>
+        </div>
+	
+	<div class="md-form">
+          <i class="fa fa-line-chart prefix"></i>
+          <%= f.text_field :title, :autofocus => true, class: 'form-control' %>
+        </div>
+	
+        <div class="md-form">
+          <i class="fa fa-line-chart prefix"></i>
+          <%= f.text_field :workout,  class: 'form-control' %>
+        </div>
+
+        <div class="md-form">
+          <i class="fa fa-clock-o prefix"></i>
+          <%= f.number_field :duration_in_min, class: 'form-control' %>
+        </div>
+
+        <div class="md-form">
+          <i class="fa fa-calendar prefix"></i>
+          <%= f.date_field :workout_date, class: 'form-control datepicker' %>
+        </div>
+
+        <div class="md-form">
+          <%= f.button class: "btn btn-block btn-lg purple-gradient", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>Processing..."} %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to '', :back, class: "fa fa-hand-left-o fa-2x faa-horizontal animated" %>
+</div>
+<br><br><br>
+<script type="text/javascript">
+  $('#image').bind('change', function(){
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 10MB.');
+    }
+  })
+</script>
