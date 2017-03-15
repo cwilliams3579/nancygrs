@@ -278,7 +278,7 @@ img { max-width: 100%; }
     .subscribe form input.subscribe-firstName, .subscribe form input.subscribe-email, .subscribe form button { width: 100%; }
 }
 
-#authorbox-about, .card {
+#authorbox-about {
    background-color: $primary-green !important;
 }
 
@@ -287,7 +287,7 @@ img { max-width: 100%; }
 // }
 
 .form-input {
-  color: #fff !important;
+  // color: #fff !important;
 }
 
 .blue-gradient {
@@ -324,4 +324,8 @@ img { max-width: 100%; }
   background: -ms-linear-gradient(left, rgba(33,64,63,1) 0%, rgba(10,18,20,1) 100%);
   background: linear-gradient(to right, rgba(33,64,63,1) 0%, rgba(10,18,20,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#21403f', endColorstr='#0a1214', GradientType=1 );
+}
+
+.map-container {
+
 }
