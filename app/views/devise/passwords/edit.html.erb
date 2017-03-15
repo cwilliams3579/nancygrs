@@ -10,15 +10,15 @@ i<br><br>
           <%= devise_error_messages! %>
           <%= f.hidden_field :reset_password_token %>
           <div class="md-form">
-            <%= f.label :password, 'New password' %>
+            <i class="fa fa-lock prefix"></i>
               <%= f.password_field :password, autofocus: true, autocomplete: 'off', class: 'form-control' %>
             </div>
             <div class="md-form">
-              <%= f.label :password_confirmation, 'Confirm new password' %>
-              <%= f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control' %>
+              <i class="fa fa-lock prefix"></i>
+              <%= f.password_field :password_confirmation, autocomplete: 'off', placeholder: "Confirm new password", class: 'form-control' %>
             </div>
             <div class="md-form">
-              <%= f.submit 'Change my Password', :class => 'button right' %>
+              <%= f.button "Change my Password", class: "btn btn-block btn-lg green-gradient", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>Processing..."} %>
             </div>
         <% end %>
       </div>

@@ -7,7 +7,7 @@
             <!--Header-->
             <div class="modal-header flex-column">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <i class="fa fa-close fa-lg" aria-hidden="true"></i>
+                    <i class="fa fa-close fa-lg text-danger" aria-hidden="true"></i>
                 </button>
                 <h3 class="w-100"> Sign Up</h3>
                 <div class="flex-row">
@@ -23,43 +23,43 @@
                 <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
                 <div class="md-form">
                     <i class="fa fa-envelope prefix"></i>
-                    <input type="text" id="email" name="user[first_name]" placeholder="First Name" class="form-control form-input">
-                    <label for="first_name" class="form-input">Your First Name</label>
+                    <input type="text" id="email" name="user[first_name]" placeholder="First Name" class="form-control">
+                    <label for="first_name">Your First Name</label>
                 </div>
                 <div class="md-form">
                     <i class="fa fa-envelope prefix"></i>
-                    <input type="text" id="email" name="user[last_name]" placeholder="Last Name" class="form-control form-input">
-                    <label for="last_name" class="form-input">Your last Name</label>
+                    <input type="text" id="email" name="user[last_name]" placeholder="Last Name" class="form-control">
+                    <label for="last_name">Your last Name</label>
                 </div>
                 <div class="md-form">
                     <i class="fa fa-envelope prefix"></i>
-                    <input type="text" id="email" name="user[email]" placeholder="johndoe@gmail.com" class="form-control form-input">
-                    <label for="email" class="form-input">Your email</label>
+                    <input type="text" id="email" name="user[email]" placeholder="johndoe@gmail.com" class="form-control">
+                    <label for="email">Your email</label>
                 </div>
 
                 <div class="md-form">
                     <i class="fa fa-lock prefix"></i>
-                    <input type="password" id="password" name="user[password]" placeholder="Create Password" class="form-control form-input">
-                    <label for="password" class="form-input">Your password</label>
+                    <input type="password" id="password" name="user[password]" placeholder="Create Password" class="form-control">
+                    <label for="password">Your password</label>
                 </div>
 
                 <div class="md-form">
                     <i class="fa fa-lock prefix"></i>
-                    <input type="password" id="password_confirmation" name="user[password_confirmation]" placeholder="Repeat Password" class="form-control form-input">
+                    <input type="password" id="password_confirmation" name="user[password_confirmation]" placeholder="Repeat Password" class="form-control">
                     <label for="password_confirmation" class="form-input">Repeat password</label>
                 </div>
 
                 <div class="text-center">
-                    <input type="submit" value="Sign Up" class="btn btn-ins btn-block blue-gradient"/>
+                    <input type="submit" value="Sign Up" class="btn btn-lg green-gradient"/>
                 </div>
               </form>
             </div>
             <!--Footer-->
             <div class="modal-footer">
                 <div class="options">
-                    <p>Already have an account? <a href="/users/sign_in">Sign In</a></p>
+                    <p class="text-left">Already have an account? <a href="/users/sign_in">Sign In</a></p>
                 </div>
-                <button type="button" class="btn btn-default ml-auto" data-dismiss="modal">
+                <button type="button" class="btn btn-lg green-gradient" data-dismiss="modal">
                   Close
                 </button>
             </div>

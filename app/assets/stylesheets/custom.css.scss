@@ -278,13 +278,13 @@ img { max-width: 100%; }
     .subscribe form input.subscribe-firstName, .subscribe form input.subscribe-email, .subscribe form button { width: 100%; }
 }
 
-#authorbox-about, .card, .modal-content {
+#authorbox-about, .card {
    background-color: $primary-green !important;
 }
 
-.fa-envelope, .fa-lock {
-  color: #fff;
-}
+// .fa-envelope, .fa-lock {
+//   color: #fff;
+// }
 
 .form-input {
   color: #fff !important;
@@ -306,14 +306,22 @@ img { max-width: 100%; }
 //   display: inline-flex;
 // }
 
-.green-gradient {
+// .green-gradient {
+//
+// background: rgba(98,125,77,1);
+// background: -webkit-linear-gradient(left, rgba(98,125,77,1) 0%, rgba(33,64,63,1) 100%) !important;
+// background: -o-linear-gradient(left, rgba(98,125,77,1) 0%, rgba(33,64,63,1) 100%) !important;
+// background: linear-gradient(to right, rgba(98,125,77,1) 0%, rgba(33,64,63,1) 100%) !important;
+// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#627d4d', endColorstr='#21403f', GradientType=1 ) !important;
+// }
 
-background: rgba(98,125,77,1);
-background: -moz-linear-gradient(left, rgba(98,125,77,1) 0%, rgba(33,64,63,1) 100%);
-background: -webkit-gradient(left top, right top, color-stop(0%, rgba(98,125,77,1)), color-stop(100%, rgba(33,64,63,1)));
-background: -webkit-linear-gradient(left, rgba(98,125,77,1) 0%, rgba(33,64,63,1) 100%);
-background: -o-linear-gradient(left, rgba(98,125,77,1) 0%, rgba(33,64,63,1) 100%);
-background: -ms-linear-gradient(left, rgba(98,125,77,1) 0%, rgba(33,64,63,1) 100%);
-background: linear-gradient(to right, rgba(98,125,77,1) 0%, rgba(33,64,63,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#627d4d', endColorstr='#21403f', GradientType=1 );
+.green-gradient {
+  background: rgba(33,64,63,1);
+  background: -moz-linear-gradient(left, rgba(33,64,63,1) 0%, rgba(10,18,20,1) 100%) !important;
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(33,64,63,1)), color-stop(100%, rgba(10,18,20,1))) !important;
+  background: -webkit-linear-gradient(left, rgba(33,64,63,1) 0%, rgba(10,18,20,1) 100%) !important;
+  background: -o-linear-gradient(left, rgba(33,64,63,1) 0%, rgba(10,18,20,1) 100%);
+  background: -ms-linear-gradient(left, rgba(33,64,63,1) 0%, rgba(10,18,20,1) 100%);
+  background: linear-gradient(to right, rgba(33,64,63,1) 0%, rgba(10,18,20,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#21403f', endColorstr='#0a1214', GradientType=1 );
 }
