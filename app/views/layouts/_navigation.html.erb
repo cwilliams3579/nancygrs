@@ -107,6 +107,9 @@
              <%= link_to "Generations Rehab Services", root_path, class: 'navbar-brand' %>
            </div>
            <ul class="nav navbar-nav ml-auto flex-row">
+             <li class="nav-item">
+               <a class="nav-link" rel="nofollow" href="/pages/contact"><i class="fa fa-envelope-o faa-tada animated-hover"></i> <span class="hidden-sm-down">Contact</span></a>
+             </li>
             <% if user_signed_in? %>
               <li class="nav-item">
                 <a href="/users/edit" class="nav-link"><i class="fa fa-user-secret faa-tada animated-hover"></i> <span class="hidden-sm-down"><%= current_user.first_name.capitalize %></span></a>
