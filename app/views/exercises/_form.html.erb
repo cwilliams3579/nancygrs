@@ -23,12 +23,12 @@
           <%= f.file_field :image %>
           <%= f.hidden_field :image_cache %>
         </div>
-	
+
 	<div class="md-form">
           <i class="fa fa-line-chart prefix"></i>
           <%= f.text_field :title, :autofocus => true, class: 'form-control' %>
         </div>
-	
+
         <div class="md-form">
           <i class="fa fa-line-chart prefix"></i>
           <%= f.text_field :workout,  class: 'form-control' %>
@@ -45,7 +45,7 @@
         </div>
 
         <div class="md-form">
-          <%= f.button class: "btn btn-block btn-lg purple-gradient", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>Processing..."} %>
+          <%= f.button class: "btn btn-block btn-lg green-gradient", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>Processing..."} %>
         </div>
       <% end %>
     </div>

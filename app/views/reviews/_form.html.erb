@@ -1,0 +1,42 @@
+<br><br><br><br><br><br>
+<div class="container-small">
+  <div class="card">
+    <div class="card-block" style="background:white;">
+      <div class="form-header green-gradient">
+        <h3><i class="fa fa-star fa-lg faa-spin animated" aria-label="true"></i></h3>
+      </div>
+      <%= form_for(review) do |f| %>
+        <% if review.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+            <ul>
+            <% review.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="md-form">
+          <%= f.label :rating %>
+          <%= f.number_field :rating %>
+        </div>
+
+        <div class="md-form">
+          <%= f.label :comment %>
+          <%= f.text_area :comment, class: "md-textarea" %>
+        </div>
+
+        <div class="md-form">
+          <%= f.label :user_id %>
+          <%= f.text_field :user_id %>
+        </div>
+
+        <div class="md-form">
+          <%= f.button class: "btn btn-block btn-lg green-gradient", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>Processing..."} %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
