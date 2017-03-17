@@ -1,8 +1,8 @@
-<br><br><br>
+<br><br><br><br><br><br>
 <div class="container-small">
   <div class="card">
     <div class="card-block" style="background:white;">
-      <div class="form-header purple-gradient">
+      <div class="form-header green-gradient">
         <h3><%= current_user.full_name %></h3>
       </div>
       <%= form_for([@user, @exercise], :html => { multipart: true }) do |f| %>
@@ -18,29 +18,29 @@
         <% end %>
 
         <div class="md-form">
-          <i class="fa fa-camera-retro prefix"></i>
+          <i class="fa fa-camera-retro prefix fa-fonts"></i>
           <%= image_tag(@exercise.image) if @exercise.image? %>
           <%= f.file_field :image %>
           <%= f.hidden_field :image_cache %>
         </div>
 
-	<div class="md-form">
-          <i class="fa fa-line-chart prefix"></i>
-          <%= f.text_field :title, :autofocus => true, class: 'form-control' %>
+	      <div class="md-form">
+          <i class="fa fa-tag prefix fa-fonts"></i>
+          <%= f.text_field :title, placeholder: "Enter title", :autofocus => true, class: 'form-control' %>
         </div>
 
         <div class="md-form">
-          <i class="fa fa-line-chart prefix"></i>
-          <%= f.text_field :workout,  class: 'form-control' %>
+          <i class="fa fa-line-chart prefix fa-fonts"></i>
+          <%= f.text_field :workout, placeholder: "Enter description", class: 'md-textarea' %>
         </div>
 
         <div class="md-form">
-          <i class="fa fa-clock-o prefix"></i>
-          <%= f.number_field :duration_in_min, class: 'form-control' %>
+          <i class="fa fa-clock-o prefix fa-fonts"></i>
+          <%= f.number_field :duration_in_min, placeholder: "Enter duration(minutes)", class: 'form-control' %>
         </div>
 
         <div class="md-form">
-          <i class="fa fa-calendar prefix"></i>
+          <i class="fa fa-calendar prefix fa-fonts"></i>
           <%= f.date_field :workout_date, class: 'form-control datepicker' %>
         </div>
 

@@ -5,6 +5,7 @@
         <div class="form-header green-gradient">
           <h3><i class="fa fa-pencil faa-horizontal animated"></i> Sign In</h3>
         </div>
+        <%= render 'layouts/messages' %>
         <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %>
           <%= devise_error_messages! %>
           <div class="md-form">

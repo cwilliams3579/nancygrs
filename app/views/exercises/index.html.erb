@@ -1,67 +1,55 @@
+<a class="" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
+<br><br><br><br><br>
+<!-- <iframe width="100%" height="320" src="https://www.youtube.com/embed/7qHInWs_3mY" frameborder="0" allowfullscreen></iframe> -->
 <div class="container">
-  <!--Section: Products v.2-->
-  <section class="section">
+  <!--Section: Blog v.1-->
+  <section class="section extra-margins">
 
       <!--Section heading-->
       <h1 class="section-heading">Exercises</h1>
       <!--Section sescription-->
-      <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam. Quia, minima?</p>
+      <p class="section-description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
+      <% @exercises.each do |exercise| %>
       <!--First row-->
       <div class="row">
+
           <!--First column-->
-        <% @exercises.each do |exercise| %>
-          <div class="col-lg-4 col-md-12 mb-r">
-
-              <!--Card-->
-              <div class="card card-cascade wider">
-
-                  <!--Card image-->
-                  <div class="overlay hm-white-slight">
-                      <!-- <iframe width="100%" height="320" src="https://www.youtube.com/embed/7qHInWs_3mY" frameborder="0" allowfullscreen></iframe> -->
-                      <%= image_tag(exercise.image.url) if exercise.image? %>
-                      <a>
-                          <div class="mask waves-effect waves-light"></div>
-                      </a>
-                  </div>
-                  <!--/.Card image-->
-
-                  <!--Card content-->
-                  <div class="card-block text-center">
-                      <!--Category & Title-->
-                      <h4 class="card-title"> <strong><a href="" class="text-white"><%= link_to exercise.workout, exercise %></a></strong></h4>
-
-                      <!--Description-->
-                      <div id="star-rating" data-score= <%= @review %> ></div>
-                      <p class="card-text"><%= exercise.workout %>
-                      </p>
-
-                      <!--Card footer-->
-                      <div class="card-footer">
-                          <span class="left"><i class="fa fa-calendar"></i> <%= exercise.workout_date %></span>
-                          <span class="right">
-                          <!-- <a class="" data-toggle="tooltip" data-placement="top" title="Quick Look"><i class="fa fa-eye"></i></a> -->
-                          <%= link_to '', exercise, toggle: "tooltip", placement: "top", title: "Quick Look", class: "fa fa-eye" %>
-                          <a class="" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                          </span>
-                      </div>
-
-                  </div>
-                  <!--/.Card content-->
-
+          <div class="col-md-5 mb-r">
+              <!--Featured image-->
+              <div class="overlay hm-white-slight">
+                  <!-- <img src="https://mdbootstrap.com/img/Photos/Horizontal/People/6-col/img%20(80).jpg" alt="Sample image for first version of blog listing"> -->
+                  <%= link_to image_tag(exercise.image.url, class: "img-fluid"), exercise if exercise.image? %>
+                  <a>
+                      <div class="mask waves-effect waves-light"></div>
+                  </a>
               </div>
-              <!--/.Card-->
-
           </div>
           <!--/First column-->
-        <% end %>
+
+          <!--Second column-->
+          <div class="col-md-7 mb-r">
+              <!--Excerpt-->
+              <h4><i class="fa fa-line-chart"></i> <%= link_to exercise.title, exercise %></h4>
+              <p><%= exercise.workout %></p>
+              <p>by <a><strong><%= exercise.user.first_name.capitalize %> <%= exercise.user.last_name.capitalize %></strong></a>, <%= time_ago_in_words(exercise.created_at) %> ago</p>
+              <span class="left"><i class="fa fa-calendar"></i> <%= exercise.workout_date %></span>
+              <%= link_to 'See more', exercise, toggle: "tooltip", placement: "top", title: "Quick Look", class: "btn green-gradient" %>
+          </div>
+          <!--/Second column-->
+
       </div>
       <!--/First row-->
+      <% end %>
+
+      <hr>
+
+
 
   </section>
-  <!--/Section: Products v.2-->
-
+  <!--/Section: Blog v.1-->
 </div>
+<div id="star-rating" data-score= <%= @review %> ></div>
 <script type="text/javascript">
   $('.star-rating').raty({
     path: 'https://s3.amazonaws.com/yelp-clone-rails/stars',
