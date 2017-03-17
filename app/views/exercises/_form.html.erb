@@ -19,7 +19,7 @@
 
         <div class="md-form">
           <i class="fa fa-camera-retro prefix fa-fonts"></i>
-          <%= image_tag(@exercise.image) if @exercise.image? %>
+          <%= image_tag(@exercise.image) if @exercise.image? %><br>
           <%= f.file_field :image %>
           <%= f.hidden_field :image_cache %>
         </div>
