@@ -3,6 +3,6 @@ module ApplicationHelper
     gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
     size = options[:size]
     gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
-    image_tag(gravatar_url, alt: user.full_name, class: "img-circle")
+    image_tag(gravatar_url, alt: user.full_name, class: "img-fluid rounded-circle z-depth-2")
   end
 end

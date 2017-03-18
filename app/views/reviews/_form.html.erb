@@ -3,9 +3,9 @@
   <div class="card">
     <div class="card-block" style="background:white;">
       <div class="form-header green-gradient">
-        <h3><i class="fa fa-star fa-lg faa-spin animated" aria-label="true"></i></h3>
+        <h3><i class="fa fa-star fa-lg faa-spin animated-hover" aria-label="true"></i></h3>
       </div>
-      <%= form_for([review, @exercise], :html => { multipart: true }) do |f| %>
+      <%= form_for(:review, :html => { :class => "form-horizontal", :role => "form" }) do |f| %>
         <% if review.errors.any? %>
           <div id="error_explanation">
             <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>

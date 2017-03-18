@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
-    
+
   end
 
   def edit
@@ -20,40 +20,34 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.user_id = current_user.id
-    respond_to do |format|
-      if @review.save
-        format.html { redirect_to @review, notice: 'Review was successfully created.' }
-        format.json { render :show, status: :created, location: @review }
-      else
-        format.html { render :new }
-      end
+    # @review.exercise_id = @exercise.id
+    if @review.save
+      redirect_to @review, notice: 'Review was successfully created.'
+    else
+      render :new
     end
   end
 
   def update
-    respond_to do |format|
-      if @review.update(review_params)
-        format.html { redirect_to @review, notice: 'Review was successfully updated.' }
-      else
-        format.html { render :edit }
-      end
+    if @review.update(review_params)
+      redirect_to @review, notice: 'Review was successfully updated.'
+    else
+      render :edit
     end
   end
 
   def destroy
     @review.destroy
-    respond_to do |format|
-      format.html { redirect_to reviews_url, notice: 'Review was successfully destroyed.' }
-    end
+    redirect_to reviews_url, notice: 'Review was successfully destroyed.'
   end
 
   private
 
-    def set_review
-      @review = Review.find(params[:id])
-    end
+  def set_review
+    @review = Review.find(params[:id])
+  end
 
-    def review_params
-      params.require(:review).permit(:rating, :comment, :user_id, :exercise_id)
-    end
+  def review_params
+    params.require(:review).permit(:rating, :comment, :user_id, :exercise_id)
+  end
 end

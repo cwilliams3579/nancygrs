@@ -12,4 +12,6 @@ Rails.application.routes.draw do
     resources :reviews, except: [:show, :index]
   end
   root to: 'visitors#index'
+
+  # post '/exercises/:exercise_id/reviews'
 end
