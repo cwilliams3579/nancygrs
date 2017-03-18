@@ -8,6 +8,10 @@ class Exercise < ApplicationRecord
   validates_presence_of :image
   validate :image_size
 
+  def score
+    self.get_upvotes.size - self.get_downvotes.size
+  end
+
   private
 
   def image_size

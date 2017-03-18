@@ -64,7 +64,9 @@
               <br>
               <!--Price-->
               <div class="price">
-                <i class="fa fa-thumbs-up fa-2x faa-vertical animated-hover" aria-hidden="true"></i>&nbsp; &nbsp; <i class="fa fa-thumbs-down fa-2x faa-vertical animated-hover" aria-hidden="true"></i>
+                <% Exercise.all.each do |exercise| %>
+                 <span class="badge white text-success"><%= exercise.score %> Likes</span>
+                <% end %>
               </div>
               <!--Social buttons-->
               <p class="text-center">Share with your friends!</p>
