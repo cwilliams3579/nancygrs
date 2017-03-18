@@ -35,8 +35,8 @@
               <%= link_to like_exercise_path(@exercise, like: true), method: :put do %>
                         <i class="fa fa-thumbs-up fa-2x faa-vertical animated-hover" aria-hidden="true"></i>&nbsp;<span class="badge white text-success"><%= @exercise.get_upvotes.size %></span>
               <% end %> &nbsp;
-              <%= link_to like_exercise_path(@exercise, like: false), method: :post do %>
-              <i class="fa fa-thumbs-down fa-2x faa-vertical animated-hover" aria-hidden="true"></i>&nbsp;<span class="badge white text-danger"><%= @exercise %></span>
+              <%= link_to dislike_exercise_path(@exercise, like: false), method: :put do %>
+              <i class="fa fa-thumbs-down fa-2x faa-vertical animated-hover" aria-hidden="true"></i>&nbsp;<span class="badge white text-danger"><%= @exercise.get_downvotes.size %></span>
             <% end %>
           </div>
 

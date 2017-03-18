@@ -1,5 +1,5 @@
 class ExercisesController < ApplicationController
-  before_action :find_exercise, only: [:show, :edit, :update, :destroy, :upvote]
+  before_action :find_exercise, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :check_user, except: [:index, :show]
 
@@ -59,6 +59,11 @@ class ExercisesController < ApplicationController
     redirect_to :back
   end
 
+  def downvote
+    @exercise.downvote_by current_user
+    redirect_to :back
+  end
+
   private
 
   def exercise_params
@@ -72,6 +77,13 @@ class ExercisesController < ApplicationController
   def check_user
     unless current_user.admin?
       redirect_to root_url, alert: "Sorry, only an administrator can perform that action!"
+    end
+  end
+
+  def require_user_like
+    if !user_signed_in?
+      flash[:danger] = "You must be logged in to perform that action"
+      redirect_to signup_path
     end
   end
 end

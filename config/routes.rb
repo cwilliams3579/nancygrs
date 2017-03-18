@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :exercises do
     member do
       put "like", to: "exercises#upvote"
+      put "dislike", to: "exercises#downvote"
     end
     resources :reviews, except: [:show, :index]
   end
