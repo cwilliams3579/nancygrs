@@ -1,0 +1,38 @@
+<br><br><br><br><br><br>
+<div class="container-small">
+  <div class="card">
+    <div class="card-block" style="background:white;">
+      <div class="form-header green-gradient">
+        <h3><%= current_user.full_name %></h3>
+      </div>
+      <%= form_for([@user, @testimonial], :html => { multipart: true }) do |f| %>
+        <% if @testimonial.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@testimonial.errors.count, "error") %> prohibited this review from being saved:</h2>
+            <ul>
+            <% @testimonial.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="md-form">
+          <i class="fa fa-star fa-2x prefix" id="review-star" aria-hidden="true"></i>
+          <%= f.number_field :rating %>
+        </div>
+
+        <div class="md-form">
+          <i class="fa fa-line-chart prefix fa-fonts"></i>
+          <%= f.text_area :content, placeholder: "Enter description", class: 'md-textarea' %>
+        </div>
+
+        <div class="md-form">
+          <%= f.button class: "btn btn-block btn-lg green-gradient", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>Processing..."} %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to '', :back, class: "fa fa-hand-left-o fa-2x faa-horizontal animated" %>
+</div>
+<br><br><br>

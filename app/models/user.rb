@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :exercises, dependent: :destroy
+  has_many :testimonials, dependent: :destroy
   has_many :reviews, dependent: :destroy
 
   # Include default devise modules. Others available are:

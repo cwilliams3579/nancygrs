@@ -40,6 +40,7 @@ $indigo: #3D466D;
 
 .img-fluid {
   width: 100% !important;
+  height: auto;
 }
 
 .nav-link, #navbar-brand{
@@ -350,3 +351,7 @@ $indigo: #3D466D;
     .go-top:hover {
     	// background-color: rgba(0, 0, 0, 0.6);
     }
+
+.fa-thumbs-up, .fa-thumbs-down {
+  color: #3B5998 !important;
+}
