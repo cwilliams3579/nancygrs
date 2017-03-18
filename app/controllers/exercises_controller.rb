@@ -80,10 +80,10 @@ class ExercisesController < ApplicationController
     end
   end
 
-  # def require_user_vote
-  #   if !user_signed_in?
-  #     flash[:danger] = "You must be logged in to perform that action"
-  #     redirect_to '/users/sign_in'
-  #   end
-  # end
+  def require_user_vote
+    if !user_signed_in?
+      flash[:danger] = "You must be logged in to perform that action"
+      redirect_to '/users/sign_in'
+    end
+  end
 end

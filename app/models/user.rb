@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  acts_as_voter
   has_many :posts, dependent: :destroy
   has_many :exercises, dependent: :destroy
   has_many :testimonials, dependent: :destroy
