@@ -17,10 +17,11 @@
                 <!--Second column-->
                 <div class="col-md-2 offset-1 hidden-md-down">
                     <a href="/exercises" ><h5>Exercises</h5></a>
-                    <ul>
-                        <li><a href="#!">Link 1</a></li>
-                        <li><a href="#!">Link 2</a></li>
-                    </ul>
+                    <% Exercise.last(3).each do |exercise| %>
+                      <ul>
+                          <li><%= link_to exercise.title, exercise %></li>
+                      </ul>
+                    <% end %>
                 </div>
                 <!--/.Second column-->
 
@@ -29,10 +30,11 @@
                 <!--Third column-->
                 <div class="col-md-2 hidden-md-down">
                     <a href="/posts"><h5>Blog</h5></a>
-                    <ul>
-                        <li><a href="#!">Link 1</a></li>
-                        <li><a href="#!">Link 2</a></li>
-                    </ul>
+                    <% Post.last(3).each do |post| %>
+                      <ul>
+                          <li><%= link_to post.title, post %></li>
+                      </ul>
+                    <% end %>
                 </div>
                 <!--/.Third column-->
 

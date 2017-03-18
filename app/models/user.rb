@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :posts, dependent: :destroy
   has_many :exercises, dependent: :destroy
   has_many :testimonials, dependent: :destroy
   has_many :reviews, dependent: :destroy
