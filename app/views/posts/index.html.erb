@@ -1,85 +1,48 @@
-<%#= link_to 'Edit', edit_post_path(post) %>
-<%#= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-<br><br><br><br><br><br>
-<!--Section: Blog v.4-->
-<section class="section section-blog-fw">
-  <% @posts.each do |post| %>
-    <!--First row-->
-    <div class="row">
-        <div class="col-md-12">
-            <!--Featured image-->
-            <div class="view overlay hm-white-slight">
-                <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(53).jpg">
-                <a>
-                    <div class=""></div>
-                </a>
-            </div>
+<br><br><br><br><br>
+<!--Main layout-->
+<div class="container">
 
-            <!--Post data-->
-            <div class="jumbotron">
-                <h2><a><%= link_to post.title, post %></a></h2>
-                <p>Written by <a><%= %></a>, <%= post.created_at %></p>
+  <div class="row">
 
-                <!--Social shares-->
-                <div class="social-counters ">
+    <% Post.all.each do |post| %>
 
-                    <!--Facebook-->
-                    <a class="btn btn-fb ">
-                        <i class="fa fa-facebook left "></i>
-                        <span class="hidden-md-down ">Facebook</span>
-                    </a>
-                    <span class="counter ">46</span>
+    <!--Main column-->
+    <div class="col-lg-8">
 
-                    <!--Twitter-->
-                    <a class="btn btn-tw ">
-                        <i class="fa fa-twitter left "></i>
-                        <span class="hidden-md-down ">Twitter</span>
-                    </a>
-                    <span class="counter ">22</span>
+      <!--Post-->
+      <div class="post-wrapper">
+        <!--Post data-->
+        <h1 class="h1-responsive"><%= post.title.capitalize %></h1>
+        <h5>Written by <a href=""><%= post.user.first_name.capitalize %> <%= post.user.last_name.capitalize %> </a>, <%= post.created_at.strftime("%B %d, %Y")  %></h5>
 
-                    <!--Google+-->
-                    <a class="btn btn-gplus ">
-                        <i class="fa fa-google-plus left "></i>
-                        <span class="hidden-md-down ">Google+</span>
-                    </a>
-                    <span class="counter ">31</span>
+        <br>
 
-                    <!--Comments-->
-                    <a class="btn btn-default ">
-                        <i class="fa fa-comments-o left "></i>
-                        <span class="hidden-md-down ">Comments</span>
-                    </a>
-                    <span class="counter ">18</span>
-
-                </div>
-                <!--/.Social shares-->
-
-            </div>
-            <!--/Post data-->
-
-            <!--Excerpt-->
-            <div class="excerpt">
-                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
-                </p>
-
-                <p><%= post.content %></p>
-            </div>
+        <!--Featured image -->
+        <div class="view overlay hm-white-light z-depth-1-half">
+          <img src="http://mdbootstrap.com/img/Photos/Slides/img%20(116).jpg" class="img-fluid " alt="">
+          <div class="mask">
+          </div>
         </div>
+
+        <br>
+
+        <!--Post excerpt-->
+        <p><%= truncate(post.content, length: 300) %></p>
+
+        <!--"Read more" button-->
+        <%= link_to "See more", post, class: "btn btn-lg green-gradient wow zoomInUp" %>
+      </div>
+      <!--/.Post-->
+
+      <hr>
+
     </div>
-    <!--/First row-->
     <% end %>
-    <hr>
 
-</section>
-<!--/Section: Blog v.4-->
+  </div>
 
+</div>
 
-
-
-
-
-
-
-
+<!--/.Main layout-->
 
 <%= link_to 'New Post', new_post_path %>

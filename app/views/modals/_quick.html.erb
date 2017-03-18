@@ -65,7 +65,7 @@
               <!--Price-->
               <div class="price">
                 <% Exercise.all.each do |exercise| %>
-                 <span class="badge white text-success"><%= exercise.score %> Likes</span>
+                 <a class="like"><i class="fa fa-heart"></i><span>&nbsp; <%= exercise.score %> likes</span></a>
                 <% end %>
               </div>
               <!--Social buttons-->
