@@ -16,6 +16,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 gem 'figaro'
+gem 'acts_as_votable', '~> 0.10.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'jquery-rails'
@@ -49,4 +50,3 @@ group :development do
   gem 'rails_apps_pages'
   gem 'rails_layout'
 end
-

@@ -31,6 +31,14 @@
             <h5 class="green-text"><i class="fa fa-line-chart"></i><%= @exercise.title %></h5>
             <p><strong class="form-input"><i class="fa fa-clock-o faa-tada animated"></i>&nbsp; Posted  <%= time_ago_in_words(@exercise.created_at) %> ago</strong></p>
           </div>
+          <div class="row col-md-8 col-md-offset-2">
+              <%= link_to like_exercise_path(@exercise, like: true), method: :put do %>
+                        <i class="fa fa-thumbs-up fa-2x faa-vertical animated-hover" aria-hidden="true"></i>&nbsp;<span class="badge white text-success"><%= @exercise.get_upvotes.size %></span>
+              <% end %> &nbsp;
+              <%= link_to like_exercise_path(@exercise, like: false), method: :post do %>
+              <i class="fa fa-thumbs-down fa-2x faa-vertical animated-hover" aria-hidden="true"></i>&nbsp;<span class="badge white text-danger"><%= @exercise %></span>
+            <% end %>
+          </div>
 
           <p class="black-text"><%= @exercise.workout %></p>
 

@@ -1,10 +1,10 @@
 class ExercisesController < ApplicationController
-  before_action :find_exercise, only: [:show, :edit, :update, :destroy]
+  before_action :find_exercise, only: [:show, :edit, :update, :destroy, :upvote]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :check_user, except: [:index, :show]
 
   def index
-    @exercises = Exercise.all
+    @exercises = Exercise.all.order("created_at DESC")
     # @exercises = Exercise.where(exercise_id: @exercise.id)
   end
 
@@ -52,6 +52,11 @@ class ExercisesController < ApplicationController
     @exercise.destroy
     flash[:notice] = "Exercise has successfully been deleted"
     redirect_to exercises_path
+  end
+
+  def upvote
+    @exercise.upvote_by current_user
+    redirect_to :back
   end
 
   private
