@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :comments
+  devise_for :users, :controllers => { registrations: 'registrations'}
   resources :posts
   resources :testimonials
-  devise_for :users, :controllers => { registrations: 'registrations'}
 
+  resources :comments
   resources :exercises do
     member do
       put "like", to: "exercises#upvote"

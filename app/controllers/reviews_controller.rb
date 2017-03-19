@@ -1,17 +1,10 @@
 class ReviewsController < ApplicationController
-  before_action :set_review, only: [:show, :edit, :update, :destroy]
+  before_action :set_review, only: [:edit, :update, :destroy]
+  before_action :set_exercise#, only: [:edit, :update, :destroy]
   before_action :authenticate_user!
-
-  def index
-    @reviews = Review.all
-  end
-
-  def show
-  end
 
   def new
     @review = Review.new
-
   end
 
   def edit
@@ -20,9 +13,9 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.user_id = current_user.id
-    # @review.exercise_id = @exercise.id
+    @review.exercise_id = @exercise.id
     if @review.save
-      redirect_to @review, notice: 'Review was successfully created.'
+      redirect_to exercises_path, notice: 'Review was successfully created.'
     else
       render :new
     end
@@ -45,6 +38,10 @@ class ReviewsController < ApplicationController
 
   def set_review
     @review = Review.find(params[:id])
+  end
+
+  def set_exercise
+    @exercise = Exercise.find(params[:exercise_id])
   end
 
   def review_params

@@ -5,7 +5,7 @@
       <div class="form-header green-gradient">
         <h3><i class="fa fa-star fa-lg faa-spin animated-hover" aria-label="true"></i></h3>
       </div>
-      <%= form_for(:review, :html => { :class => "form-horizontal", :role => "form" }) do |f| %>
+      <%= form_for([@exercise, @review]) do |f| %>
         <% if review.errors.any? %>
           <div id="error_explanation">
             <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
@@ -36,4 +36,4 @@
   </div>
 </div>
 <br><br>
-<%= link_to "", :back, class: "fa fa-hand-o-left fa-2x faa-horizontal animated fa-fonts" %>
+<%= link_to "", exercises_path, class: "fa fa-hand-o-left fa-2x faa-horizontal animated fa-fonts" %>

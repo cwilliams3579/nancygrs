@@ -46,6 +46,7 @@ gem 'high_voltage'
 
 group :development do
   gem 'better_errors'
+  gem 'hirb'
   gem 'hub', :require=>nil
   gem 'rails_apps_pages'
   gem 'rails_layout'

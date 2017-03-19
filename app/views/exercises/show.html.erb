@@ -96,8 +96,8 @@
           <%= link_to "", edit_exercise_path(@exercise), class: "fa fa-pencil fa-2x faa-horizontal animated-hover fa-fonts" %>&nbsp; &nbsp; &nbsp;
           <%= link_to "", @exercise, class: "fa fa-trash fa-2x faa-shake animated-hover fa-fonts", :method => :delete, :data => {:confirm => "You Sure?"} %>
           <% else %>
-            <%= link_to '',  new_exercise_review_path(@exercise), class: "fa fa-plus fa-2x faa-tada animated-hover fa-fonts" %>&nbsp; &nbsp; &nbsp;
-            <%= link_to '',  edit_exercise_review_path(@exercise), class: "fa fa-pencil fa-2x faa-wrench animated-hover fa-fonts" %>&nbsp; &nbsp; &nbsp;
+            <%#= link_to '',  new_review_path(@exercise), class: "fa fa-plus fa-2x faa-tada animated-hover fa-fonts" %>&nbsp; &nbsp; &nbsp;
+            <%#= link_to '',  edit_review_path(@exercise), class: "fa fa-pencil fa-2x faa-wrench animated-hover fa-fonts" %>&nbsp; &nbsp; &nbsp;
         </div>
         <% end %>
 
