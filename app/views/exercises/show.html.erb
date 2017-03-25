@@ -4,7 +4,6 @@
 
     <!--Section heading-->
     <h1 class="section-heading text-white">Exercises</h1>
-    <div class="star-rating" data-score= <%= @avg_rating %> ></div>
     <!--Section description-->
     <p class="section-description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
@@ -44,9 +43,7 @@
           <p class="form-input">
             <i class="fa fa-clock-o faa-tada animated"></i> &nbsp; Duration <%= @exercise.duration_in_min %> minutes
           </p>
-          <% @reviews.each do |review| %>
 
-          <% end %>
         </div>
         <!--/Featured news-->
 
@@ -59,8 +56,8 @@
       <% if @reviews.blank? %>
         <h3>No reviews yet. Be the the first to write one.</h3>
         <% else %>
-          <% @reviews.each do |review| %>
             <!--Small news-->
+            <% @reviews.each do |review| %>
             <div class="single-news">
 
               <div class="row">
@@ -75,29 +72,30 @@
                   </div>
                   <!--Excerpt-->
                   <div class="col-md-9">
-                    <div class="star-rating" data-score= <%= @avg_rating %> ></div>
-                    <a><%= review.comment %>
+                    <div class="star-rating" data-score= <%= link_to @avg_rating, new_exercise_review_path(@exercise), data: { turbolinks: false } %> ></div>
+                    <p>
+                      <%= truncate(review.comment, length: 300) %>
                       <i class="fa fa-angle-right"></i>
-                    </a>
+                    </p>
                   </div>
 
                 </div>
               </div>
               <!--/Small news-->
             </div>
-          <% end %>
+            <% end %>
         <% end %>
+        <% if user_signed_in? %>
+          <%= link_to '',  new_exercise_review_path(@exercise), class: "fa fa-plus fa-2x faa-tada animated-hover fa-fonts" %>&nbsp; &nbsp; &nbsp;
+          <%= link_to '',  edit_exercise_review_path(@exercise), class: "fa fa-pencil fa-2x faa-wrench animated-hover fa-fonts" %>&nbsp; &nbsp; &nbsp;
         <!--/Second column-->
-
+        <% end %>
       </div>
       <!--/First row-->
       <% if current_user && current_user.admin? %>
         <div class="btn-group">
           <%= link_to "", edit_exercise_path(@exercise), class: "fa fa-pencil fa-2x faa-horizontal animated-hover fa-fonts" %>&nbsp; &nbsp; &nbsp;
           <%= link_to "", @exercise, class: "fa fa-trash fa-2x faa-shake animated-hover fa-fonts", :method => :delete, :data => {:confirm => "You Sure?"} %>
-          <% else %>
-            <%#= link_to '',  new_review_path(@exercise), class: "fa fa-plus fa-2x faa-tada animated-hover fa-fonts" %>&nbsp; &nbsp; &nbsp;
-            <%#= link_to '',  edit_review_path(@exercise), class: "fa fa-pencil fa-2x faa-wrench animated-hover fa-fonts" %>&nbsp; &nbsp; &nbsp;
         </div>
         <% end %>
 

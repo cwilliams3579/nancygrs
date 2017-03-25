@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  # before_action :set_comment
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
@@ -17,8 +18,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    @post.user = current_user
+    @post = current_user.posts.build(post_params)
+    @post.user_id = current_user.id
+    @post.comment_id = @comment.id
     if @post.save
       redirect_to @post, notice: 'Post was successfully created.'
     else
@@ -40,9 +42,14 @@ class PostsController < ApplicationController
   end
 
   private
+
   def set_post
     @post = Post.find(params[:id])
   end
+
+  # def set_comment
+  #   @comment = Comment.find(params[:comment_id])
+  # end
 
   def post_params
     params.require(:post).permit(:title, :content)

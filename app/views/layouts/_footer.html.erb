@@ -1,85 +1,104 @@
-<!--Footer-->
-    <footer class="page-footer center-on-small-only">
 
-        <!--Footer Links-->
+
+
+<footer id="footer" class="page-footer center-on-small-only ">
+
+    <!--Footer Links-->
+    <div class="container-fluid">
+        <div class="row wow fadeIn no-display appear" data-wow-delay="0.2s">
+            <!--First column-->
+            <div class="col-md-3 offset-md-1">
+                <p class="column-title white-text">Exercises</p>
+                <ul>
+                    <li><a href="#">Exercise 1</a></li>
+                    <li><a href="#">Exercise 2</a></li>
+                    <li><a href="#">Exercise 3</a></li>
+                    <li><a href="#">Exercise 4</a></li>
+                    <li><a href="#">Exercise 5</a></li>
+                    <li><a href="#">Exercise 6</a></li>
+                    <li><a href="#">Exercise 7</a></li>
+                    <li><a href="#">Exercise 8</a></li>
+                </ul>
+            </div>
+            <!--/.First column-->
+            <hr class="hidden-md-up">
+            <!--Second column-->
+            <div class="col-md-2">
+                <p class="column-title white-text">Blog</p>
+                <ul>
+                    <li><a href="#">Blog 1</a></li>
+                    <li><a href="#">Blog 2</a></li>
+                    <li><a href="#">Blog 3</a></li>
+                    <li><a href="#">Blog 4</a></li>
+                    <li><a href="#">Blog 5</a></li>
+                    <li><a href="#">Blog 6</a></li>
+                    <li><a href="#">Blog 7</a></li>
+                </ul>
+            </div>
+            <!--/.Second column-->
+            <hr class="hidden-md-up">
+            <!--Third column-->
+            <div class="col-md-3 mb-1">
+                <p class="column-title white-text text-center">Join us</p>
+                <div class="view overlay hm-white-slight z-depth-2">
+                    <img src="https://mdbootstrap.com/img/Mockups/Horizontal/3-col/affiliate-program-390px.jpg" class="img-fluid">
+                    <a href="#">
+                        <div class="mask waves-effect waves-light"></div>
+                    </a>
+                </div>
+            </div>
+            <!--/.Third column-->
+            <hr class="hidden-md-up">
+            <!--Fourth column-->
+            <div class="col-md-3 mb-1">
+                <p class="column-title white-text text-center">Take a look at our gallery</p>
+                <div class="view overlay hm-white-slight z-depth-2">
+                    <img src="https://mdbootstrap.com/img/Mockups/Horizontal/3-col/mdb-gallery-390px.jpg" class="img-fluid">
+                    <a href="#">
+                        <div class="mask waves-effect waves-light"></div>
+                    </a>
+                </div>
+            </div>
+            <!--/.Fourth column-->
+        </div>
+    </div>
+    <!--/.Footer Links-->
+    <hr>
+    <!--Call to action-->
+    <div class="call-to-action">
+      <ul>
+        <li>
+          <h5>Register for free</h5>
+        </li>
+        <li><a href="/users/sign_up" class="btn btn-lg green-gradient" >Sign up!</a></li>
+        <li class="fb-like" data-href="https://generationsrs.com/" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></li>
+      </ul>
+    </div>
+    <!--/.Call to action-->
+    <hr>
+    <!--Social buttons-->
+    <div class="social-section wow fadeIn no-display appear" data-wow-delay="0.2s">
+        <ul>
+            <li><a target="_blank" href="#" class="btn btn-fb waves-effect waves-light"><i class="fa fa-facebook left"></i> Facebook</a></li>
+            <li><a target="_blank" href="#" class="btn btn-tw waves-effect waves-light"><i class="fa fa-twitter left"></i> Twitter</a></li>
+            <li><a target="_blank" href="#" class="btn btn-gplus waves-effect waves-light"><i class="fa fa-google-plus left"></i> Google +</a></li>
+            <li><a target="_blank" href="#" class="btn btn-li waves-effect waves-light"><i class="fa fa-linkedin left"></i> LinkedIn</a></li>
+            <li><a target="_blank" href="#" class="btn btn-dribbble waves-effect waves-light"><i class="fa fa-dribbble left"></i> Dribbble</a></li>
+            <li><a target="_blank" href="#" class="btn btn-pin waves-effect waves-light"><i class="fa fa-pinterest left"></i> Pinterest</a></li>
+            <li><a target="_blank" href="#" class="btn btn-unique waves-effect waves-light"><i class="fa fa-codepen left"></i> CodePen</a></li>
+            <li><a target="_blank" href="#" class="btn btn-email waves-effect waves-light"><i class="fa fa-github left"></i> GitHub</a></li>
+            <li><a target="_blank" href="#" class="btn btn-comm waves-effect waves-light"><i class="fa fa-comments-o left"></i> Support</a></li>
+        </ul>
+    </div>
+    <!--/.Social buttons-->
+
+    <!--Copyright-->
+    <div class="footer-copyright wow fadeIn no-display appear" data-wow-delay="0.2s">
         <div class="container-fluid">
-            <div class="row">
-
-                <!--First column-->
-                <div class="col-md-3 offset-1">
-                    <a href="/"><h5 >Generations Rehab Services</h5></a>
-                    <p>Dedicated RPT offering 17 years of acute-care, sub-acute care, outpatient, SNF, home health care. A history of "exemplary" ratings on performance reviews; trilingual fluency (Spanish, Creole); and solid credentials that include dual-state licensure (FL,Ma), BLS/CPR, Autism Navigator certifications.</p>
-                </div>
-                <!--/.First column-->
-
-                <hr class="hidden-md-up">
-
-                <!--Second column-->
-                <div class="col-md-2 offset-1 hidden-md-down">
-                    <a href="/exercises" ><h5>Exercises</h5></a>
-                    <% Exercise.last(3).each do |exercise| %>
-                      <ul>
-                          <li><%= link_to exercise.title, exercise %></li>
-                      </ul>
-                    <% end %>
-                </div>
-                <!--/.Second column-->
-
-                <hr class="hidden-md-down">
-
-                <!--Third column-->
-                <div class="col-md-2 hidden-md-down">
-                    <a href="/posts"><h5>Blog</h5></a>
-                    <% Post.last(3).each do |post| %>
-                      <ul>
-                          <li><%= link_to post.title, post %></li>
-                      </ul>
-                    <% end %>
-                </div>
-                <!--/.Third column-->
-
-                <hr class="hidden-md-up">
-
-            </div>
+            ©
+            2017 Copyright: <a href="https://generationsrs.com"> generationsrs.com </a>
         </div>
-        <!--/.Footer Links-->
+    </div>
+    <!--/.Copyright-->
 
-        <hr>
-
-        <!--Call to action-->
-        <div class="call-to-action">
-            <ul>
-                <li>
-                    <h5>Register for free</h5>
-                </li>
-                <li><a href="/users/sign_up" class="btn btn-lg green-gradient" >Sign up!</a></li>
-                <li class="fb-like" data-href="https://generationsrs.com/" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></li>
-            </ul>
-        </div>
-        <!--/.Call to action-->
-
-        <hr>
-
-        <!--Social buttons-->
-        <div class="social-section">
-            <ul>
-                <li><a class="btn-floating btn-small btn-fb"><i class="fa fa-facebook"> </i></a></li>
-                <li><a class="btn-floating btn-small btn-tw"><i class="fa fa-twitter"> </i></a></li>
-                <li><a class="btn-floating btn-small btn-gplus"><i class="fa fa-google-plus"> </i></a></li>
-                <li><a class="btn-floating btn-small btn-li"><i class="fa fa-linkedin"> </i></a></li>
-                <li><a class="btn-floating btn-small btn-pin"><i class="fa fa-pinterest"> </i></a></li>
-                <li><a class="btn-floating btn-small btn-ins"><i class="fa fa-instagram"> </i></a></li>
-                <li><a href="#" class="go-top fa fa-hand-o-up fa-lg faa-float animated green-text"></a></li>
-            </ul>
-        </div>
-        <!--/.Social buttons-->
-
-        <!--Copyright-->
-        <div class="footer-copyright">
-            <div class="container-fluid">
-                © 2017 Copyright: <a href="http://www.generationsrs.com" target="_blank"> www.generationsrs.com </a>
-            </div>
-        </div>
-        <!--/.Copyright-->
-
-    </footer>
+</footer>
