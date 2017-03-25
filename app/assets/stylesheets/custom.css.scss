@@ -317,9 +317,6 @@ $indigo: #3D466D;
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#21403f', endColorstr='#0a1214', GradientType=1 );
     }
 
-    .map-container {
-
-    }
 
     .map-responsive{
       overflow:hidden;
@@ -408,4 +405,8 @@ $indigo: #3D466D;
 #gallery-img {
   width: 100%;
   height: 42vh;
+}
+
+.cyan-skin .card-header, .cyan-skin .form-header {
+    background-color: #25494A !important;
 }
