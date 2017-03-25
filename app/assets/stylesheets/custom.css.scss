@@ -365,7 +365,7 @@ $indigo: #3D466D;
     }
 
     .side-nav .logo-wrapper, .side-nav .logo-wrapper a {
-      height:10vh !important;
+      // height:10vh !important;
       width: 100%;
       background-color: transparent;
     }
@@ -389,12 +389,11 @@ $indigo: #3D466D;
     }
 
     #icon {
-      background: url('/assets/logo-design.jpg') no-repeat center center;
+      background: url('https://github.com/cwilliams3579/Screenshots/blob/master/workout.jpg?raw=true') no-repeat center center;
       background-size: cover;
       position: relative;
       width: 100%;
-      // top:0;
-      left:0;
+      // height: 55vh !important;
       z-index: -1;
       margin-bottom: 0px;
       text-shadow: black 0.3em 0.3em 0.3em;
@@ -404,4 +403,9 @@ $indigo: #3D466D;
 #footer-img {
   width: 100%;
   height: 19vh;
+}
+
+#gallery-img {
+  width: 100%;
+  height: 42vh;
 }

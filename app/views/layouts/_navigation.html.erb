@@ -7,18 +7,28 @@
        <ul id="slide-out" class="side-nav fixed sn-bg-1 custom-scrollbar">
            <!-- Logo -->
            <li>
-               <div class="logo-wrapper waves-light wow rubberBand animated">
-                 <a href="/"><p id="icon">  </p></a>
+               <!-- <div class="logo-wrapper waves-light wow rubberBand animated">
+                 <a href="/"><p id="icon"> </p></a>
+
+               </div> -->
+               <!--Collection card-->
+               <div class="card collection-card z-depth-1-half">
+                   <!--Card image-->
+                   <div class="view  hm-zoom">
+                       <img src="https://github.com/cwilliams3579/Screenshots/blob/master/workout.jpg?raw=true" class="img-fluid" alt="" >
+                   </div>
+                   <!--/.Card image-->
                </div>
+               <!--/.Collection card-->
            </li><br>
            <!--/. Logo -->
            <!--Social-->
            <li>
                <ul class="social">
-                   <li><a class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a></li>
-                   <li><a class="icons-sm pin-ic"><i class="fa fa-pinterest"> </i></a></li>
-                   <li><a class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a></li>
-                   <li><a class="icons-sm tw-ic"><i class="fa fa-twitter"> </i></a></li>
+                   <li><a target="_blank" href="https://www.facebook.com/GenerationsRehabServicesInternational/" class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a></li>
+                   <li><a target="_blank" href="#" class="icons-sm pin-ic"><i class="fa fa-pinterest"> </i></a></li>
+                   <li><a target="_blank" href="https://plus.google.com/u/0/collections/" class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a></li>
+                   <li><a target="_blank" href="#" class="icons-sm tw-ic"><i class="fa fa-twitter"> </i></a></li>
                </ul>
            </li>
            <!--/Social-->
@@ -34,6 +44,39 @@
            <!-- Side navigation links -->
            <li>
                <ul class="collapsible collapsible-accordion">
+                   <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-line-chart faa-float animated-hover"></i> Exercise<i class="fa fa-angle-down rotate-icon"></i></a>
+                       <div class="collapsible-body">
+                           <ul>
+                              <li>
+                                <a href="/exercises" class="waves-effect">Exercise</a>
+                              </li>
+                              <% if user_signed_in? && (current_user.admin?) %>
+                              <li>
+                                <%= link_to 'New Exercise', new_exercise_path(current_user), class: "waves-effect" %>
+                              </li>
+                              <% end %>
+                           </ul>
+                       </div>
+                   </li>
+
+                   <li>
+                     <a class="collapsible-header waves-effect arrow-r">
+                       <i class="fa fa-camera-retro faa-tada animated-hover"></i> Gallery<i class="fa fa-angle-down rotate-icon"></i>
+                     </a>
+                       <div class="collapsible-body">
+                           <ul>
+                               <li>
+                                 <a href="/pages/gallery" class="waves-effect">Gallery</a>
+                               </li>
+                               <% if user_signed_in? && (current_user.admin?) %>
+                               <li>
+                                 <a href="/posts/new" class="waves-effect">Upload</a>
+                               </li>
+                               <% end %>
+                           </ul>
+                       </div>
+                   </li>
+
                    <li>
                      <a class="collapsible-header waves-effect arrow-r">
                        <i class="fa fa-pencil faa-horizontal animated-hover"></i> Blog<i class="fa fa-angle-down rotate-icon"></i>
@@ -48,20 +91,6 @@
                                  <a href="/posts/new" class="waves-effect">New Post</a>
                                </li>
                                <% end %>
-                           </ul>
-                       </div>
-                   </li>
-                   <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-line-chart faa-float animated-hover"></i> Exercise<i class="fa fa-angle-down rotate-icon"></i></a>
-                       <div class="collapsible-body">
-                           <ul>
-                              <li>
-                                <a href="/exercises" class="waves-effect">Exercise</a>
-                              </li>
-                              <% if user_signed_in? && (current_user.admin?) %>
-                              <li>
-                                <%= link_to 'New Exercise', new_exercise_path(current_user), class: "waves-effect" %>
-                              </li>
-                              <% end %>
                            </ul>
                        </div>
                    </li>
