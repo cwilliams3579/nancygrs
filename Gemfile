@@ -10,6 +10,7 @@ gem 'rails', '~> 5.0.2'
 gem 'sqlite3'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
+gem 'font-awesome-sass'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'carrierwave'
@@ -45,7 +46,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'devise'
-gem 'font-awesome-sass'
 gem 'high_voltage'
 
 source "https://rails-assets.org" do
