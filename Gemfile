@@ -17,6 +17,7 @@ gem 'mini_magick'
 gem 'fog'
 gem 'figaro'
 gem 'rack-cors', :require => 'rack/cors'
+gem "brakeman", :require => false
 # gem 'therubyracer', platforms: :ruby
 
 gem 'jquery-rails'
