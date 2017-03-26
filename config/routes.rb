@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments, only: [:create]
   end
+
   resources :testimonials
 
   resources :exercises do
@@ -13,6 +14,9 @@ Rails.application.routes.draw do
     end
     resources :reviews, except: [:show, :index]
   end
+
+  resources :contacts, only: [:new, :create] 
+
   root to: 'visitors#index'
   mount ActionCable.server => '/cable'
 end
