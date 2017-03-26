@@ -1,4 +1,5 @@
 class Contact < MailForm::Base
+  include MailForm::Delivery
   attributes :name,  :validate => true
   attributes :email, :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
   attributes :type,  :validate => ["General", "Interface bug"]
