@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 resources :contacts, only: [:new, :create]
 
 root to: 'visitors#index'
-mount ActionCable.server => '/cable'
+# mount ActionCable.server => '/cable'
 
 # end
 end
