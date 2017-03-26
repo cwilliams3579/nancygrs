@@ -7,19 +7,11 @@
        <ul id="slide-out" class="side-nav fixed sn-bg-1 custom-scrollbar">
            <!-- Logo -->
            <li>
-               <!-- <div class="logo-wrapper waves-light wow rubberBand animated">
+               <div class="logo-wrapper view  hm-zoom z-depth-1-half waves-light wow rubberBand animated">
                  <a href="/"><p id="icon"> </p></a>
 
-               </div> -->
-               <!--Collection card-->
-               <div class="card collection-card z-depth-1-half">
-                   <!--Card image-->
-                   <div class="view  hm-zoom">
-                       <img src="https://github.com/cwilliams3579/Screenshots/blob/master/workout.jpg?raw=true" class="img-fluid" alt="" >
-                   </div>
-                   <!--/.Card image-->
                </div>
-               <!--/.Collection card-->
+
            </li><br>
            <!--/. Logo -->
            <!--Social-->
@@ -142,11 +134,20 @@
                <a class="nav-link" rel="nofollow" href="/pages/about"><i class="fa fa-eye faa-tada animated-hover"></i> <span class="hidden-sm-down">About</span></a>
              </li>
              <li class="nav-item">
-               <a class="nav-link" rel="nofollow" href="/pages/faq"><i class="fa fa-question faa-tada animated-hover"></i> <span class="hidden-sm-down">FAQ</span></a>
-             </li>
-             <li class="nav-item">
                <a class="nav-link" rel="nofollow" href="/pages/contact"><i class="fa fa-envelope-o faa-tada animated-hover"></i> <span class="hidden-sm-down">Contact</span></a>
              </li>
+             <li class="nav-item">
+               <a class="nav-link" rel="nofollow" href="/pages/faq"><i class="fa fa-question faa-tada animated-hover"></i> <span class="hidden-sm-down">FAQ</span></a>
+             </li>
+             <li class="nav-item dropdown btn-group">
+                    <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-globe faa-spin animated-hover"></i><span class="hidden-sm-down"> Language</span></a>
+                    <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenu1">
+                        <a class="dropdown-item">English</a>
+                        <a class="dropdown-item">Creole</a>
+                        <a class="dropdown-item">French</a>
+                        <a class="dropdown-item">Spanish</a>
+                    </div>
+                </li>
             <% if user_signed_in? %>
               <li class="nav-item">
 

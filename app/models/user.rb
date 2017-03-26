@@ -14,4 +14,11 @@ class User < ApplicationRecord
   def full_name
    self.first_name + " " + self.last_name
   end
+
+  validate :password_complexity
+   def password_complexity
+      if password.present? and not password.match(/\A(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+\z/)
+          errors.add :password, "must include at least one lowercase letter, one uppercase letter, and one digit"
+      end
+   end
 end
