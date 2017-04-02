@@ -1,24 +1,21 @@
-class Contact < MailForm::Base
-  include MailForm::Delivery
-  attributes :name,  :validate => true
-  attributes :email, :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
-  attributes :type,  :validate => ["General", "Interface bug"]
-  attributes :message
-  attributes :number
-  attributes :screenshot, :attachment => true, :validate => :interface_bug?
-  attributes :nickname,   :captcha => true
+class Contact <  ApplicationRecord #ActionMailer::Base
+  # validates :name,  presence: true
+  # validates :email, :with => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
+  # validates :message, presence: true
+  # validates :number, presence: true
 
+  def receive(email)
+    page = Page.find_by(address: email.to.first)
+    page.emails.create(
+      subject: email.subject, body: email.body
+    )
 
-  def headers
-    {
-      :subject => "Contact Form",
-      :to => "clevelandwilliams3579@gmail.com",
-      :from => %("#{name}" <#{email}>)
-    }
-  end
-  def interface_bug?
-    if type == 'Interface bug' && screenshot.nil?
-      self.errors.add(:screenshot, "can't be blank on interface bugs")
+    if email.has_attachments?
+      email.attachments.each do |attachment|
+        page.attachments.create({
+          file: attachment, description: email.subject
+        })
+      end
     end
   end
 end

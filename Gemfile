@@ -16,7 +16,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 gem 'figaro'
-gem 'mail_form'
+gem 'actionmailer'
 gem 'rack-cors', :require => 'rack/cors'
 gem "brakeman", :require => false
 # gem 'therubyracer', platforms: :ruby
