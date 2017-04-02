@@ -1,4 +1,4 @@
-class Contact <  ApplicationMailer
+class Contact <  ApplicationRecord
   def receive(email)
     page = Page.find_by(address: email.to.first)
     page.emails.create(
