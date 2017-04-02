@@ -8,15 +8,20 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     if @contact.save
       flash.now[:notice] = 'Thank you for your message. We will contact you soon!'
-    else
-      flash.now[:danger] = 'Cannot send message.'
-      render :new
+      @contact.request = request
+      if @contact.deliver
+        flash[:notice] = 'Thank you for your message. We will contact you soon!'
+        redirect_to root_path
+      else
+        flash.now[:danger] = 'Cannot send message.'
+        render :new
+      end
     end
-  end
 
-  private
+    private
 
-  def contact_params
-    params.require(:contact).permit(:name, :email, :number, :message, :nickname)
+    def contact_params
+      params.require(:contact).permit(:name, :email, :number, :message, :nickname)
+    end
   end
 end
