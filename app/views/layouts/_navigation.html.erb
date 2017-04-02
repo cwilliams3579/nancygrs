@@ -17,10 +17,10 @@
            <!--Social-->
            <li>
                <ul class="social">
-                   <li><a target="_blank" href="https://www.facebook.com/GenerationsRehabServicesInternational/" class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a></li>
-                   <li><a target="_blank" href="#" class="icons-sm pin-ic"><i class="fa fa-pinterest"> </i></a></li>
-                   <li><a target="_blank" href="https://plus.google.com/u/0/collections/" class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a></li>
-                   <li><a target="_blank" href="#" class="icons-sm tw-ic"><i class="fa fa-twitter"> </i></a></li>
+                   <li><a target="_blank" href="https://www.facebook.com/GenerationsRehabServicesInternational/" class="icons-sm fb-ic wow fadeInLeftBig" data-wow-delay="1.6s"><i class="fa fa-facebook"> </i></a></li>
+                   <li><a target="_blank" href="#" class="icons-sm pin-ic wow fadeInLeftBig" data-wow-delay="1.4s"><i class="fa fa-pinterest"> </i></a></li>
+                   <li><a target="_blank" href="https://plus.google.com/u/0/collections/" class="icons-sm gplus-ic wow fadeInLeftBig" data-wow-delay="1.2s"><i class="fa fa-google-plus"> </i></a></li>
+                   <li><a target="_blank" href="#" class="icons-sm tw-ic wow fadeInLeftBig" data-wow-delay="1s"><i class="fa fa-twitter"> </i></a></li>
                </ul>
            </li>
            <!--/Social-->
@@ -36,7 +36,7 @@
            <!-- Side navigation links -->
            <li>
                <ul class="collapsible collapsible-accordion">
-                   <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-line-chart faa-float animated-hover"></i> Exercise<i class="fa fa-angle-down rotate-icon"></i></a>
+                   <li><a class="collapsible-header waves-effect arrow-r wow bounceInUp" data-wow-delay="1s"><i class="fa fa-line-chart faa-float animated-hover"></i> Exercise<i class="fa fa-angle-down rotate-icon"></i></a>
                        <div class="collapsible-body">
                            <ul>
                               <li>
@@ -52,7 +52,7 @@
                    </li>
 
                    <li>
-                     <a class="collapsible-header waves-effect arrow-r">
+                     <a class="collapsible-header waves-effect arrow-r wow bounceInUp" data-wow-delay="1.2s">
                        <i class="fa fa-camera-retro faa-tada animated-hover"></i> Gallery<i class="fa fa-angle-down rotate-icon"></i>
                      </a>
                        <div class="collapsible-body">
@@ -70,7 +70,7 @@
                    </li>
 
                    <li>
-                     <a class="collapsible-header waves-effect arrow-r">
+                     <a class="collapsible-header waves-effect arrow-r wow bounceInUp" data-wow-delay="1.4s">
                        <i class="fa fa-pencil faa-horizontal animated-hover"></i> Blog<i class="fa fa-angle-down rotate-icon"></i>
                      </a>
                        <div class="collapsible-body">
@@ -86,7 +86,7 @@
                            </ul>
                        </div>
                    </li>
-                   <li><a  class="collapsible-header waves-effect arrow-r"><i class="fa fa-eye faa-pulse animated-hover"></i> About<i class="fa fa-angle-down rotate-icon"></i></a>
+                   <li><a  class="collapsible-header waves-effect arrow-r wow bounceInUp" data-wow-delay="1.6s"><i class="fa fa-eye faa-pulse animated-hover"></i> About<i class="fa fa-angle-down rotate-icon"></i></a>
                        <div class="collapsible-body">
                            <ul>
                                <li>
@@ -98,7 +98,10 @@
                            </ul>
                        </div>
                    </li>
-                   <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-envelope-o faa-shake animated-hover"></i> Contact me<i class="fa fa-angle-down rotate-icon"></i></a>
+                   <li>
+                     <a class="collapsible-header waves-effect arrow-r wow bounceInUp"   data-wow-delay="1.8s">
+                       <i class="fa fa-envelope-o faa-shake animated-hover"></i> Contact me<i class="fa fa-angle-down rotate-icon"></i>
+                     </a>
                        <div class="collapsible-body">
                            <ul>
                                <li>
@@ -126,21 +129,21 @@
            </div>
            <!-- Breadcrumb-->
            <div class="breadcrumb-dn mr-auto">
-             &nbsp; &nbsp; &nbsp;<a href="/"><i class="fa fa-hospital-o faa-tada animated-hover fa-2x"></i></a>&nbsp; &nbsp;
-             <%= link_to "Generations Rehab Services", root_path, class: 'navbar-brand' %>
+             &nbsp; &nbsp; &nbsp;<a href="/"><i class="fa fa-hospital-o fa-2x wow bounceInDown"></i></a>&nbsp; &nbsp;
+             <%= link_to "Generations Rehab Services", root_path, class: 'navbar-brand wow jello' %>
            </div>
            <ul class="nav navbar-nav ml-auto flex-row">
-             <li class="nav-item">
-               <a class="nav-link" rel="nofollow" href="/pages/about"><i class="fa fa-eye faa-tada animated-hover"></i> <span class="hidden-sm-down">About</span></a>
+             <li class="nav-item ">
+               <a class="nav-link wow bounceInDown" data-wow-delay="1s" rel="nofollow" href="/pages/about"><i class="fa fa-eye faa-tada animated-hover"></i> <span class="hidden-sm-down">About</span></a>
              </li>
              <li class="nav-item">
-               <a class="nav-link" rel="nofollow" href="/contacts/new"><i class="fa fa-envelope-o faa-tada animated-hover"></i> <span class="hidden-sm-down">Contact</span></a>
+               <a class="nav-link wow bounceInDown" data-wow-delay="1.2s" rel="nofollow" href="/contacts/new"><i class="fa fa-envelope-o faa-tada animated-hover"></i> <span class="hidden-sm-down">Contact</span></a>
              </li>
              <li class="nav-item">
-               <a class="nav-link" rel="nofollow" href="/pages/faq"><i class="fa fa-question faa-tada animated-hover"></i> <span class="hidden-sm-down">FAQ</span></a>
+               <a class="nav-link wow bounceInDown" data-wow-delay="1.4s" rel="nofollow" href="/pages/faq"><i class="fa fa-question faa-tada animated-hover"></i> <span class="hidden-sm-down">FAQ</span></a>
              </li>
              <li class="nav-item dropdown btn-group">
-                    <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-globe faa-spin animated-hover"></i><span class="hidden-sm-down"> Language</span></a>
+                    <a class="nav-link dropdown-toggle wow bounceInDown" data-wow-delay="1.6s" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-globe faa-spin animated-hover"></i><span class="hidden-sm-down"> Language</span></a>
                     <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenu1">
                         <a class="dropdown-item">English</a>
                         <a class="dropdown-item">Creole</a>
@@ -151,19 +154,19 @@
             <% if user_signed_in? %>
               <li class="nav-item">
 
-                <a href="/users/edit" class="nav-link"><i class="fa fa-user-secret faa-tada animated-hover"></i> <span class="hidden-sm-down"><%= current_user.first_name.capitalize %></span></a>
+                <a href="/users/edit" class="nav-link wow bounceInDown" data-wow-delay="1.8s"><i class="fa fa-user-secret faa-tada animated-hover"></i> <span class="hidden-sm-down"><%= current_user.first_name.capitalize %></span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" rel="nofollow" data-method="delete" href="/users/sign_out"><i class="fa fa-sign-out faa-tada animated-hover"></i> <span class="hidden-sm-down">Sign Out</span></a>
+                <a class="nav-link wow bounceInDown" data-wow-delay="2s" rel="nofollow" data-method="delete" href="/users/sign_out"><i class="fa fa-sign-out faa-tada animated-hover"></i> <span class="hidden-sm-down">Sign Out</span></a>
               </li>
             <% else %>
               <li class="nav-item">
-                <a class="nav-link" data-toggle="modal" data-target="#modal-register">
+                <a class="nav-link wow bounceInDown" data-wow-delay="2s" data-toggle="modal" data-target="#modal-register">
                   <i class="fa fa-user-plus faa-tada animated-hover"></i> <span class="hidden-sm-down">Sign Up</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-toggle="modal" data-target="#modal-login"><i class="fa fa-sign-in faa-tada animated-hover"></i> <span class="hidden-sm-down">Sign In</span>
+                <a class="nav-link wow bounceInDown" data-wow-delay="2.2s" data-wow-offset="10" data-toggle="modal" data-target="#modal-login"><i class="fa fa-sign-in faa-tada animated-hover"></i> <span class="hidden-sm-down">Sign In</span>
                 </a>
               </li>
             <% end %>
