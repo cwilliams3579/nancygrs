@@ -19,6 +19,13 @@
         <% end %>
 
         <div class="md-form">
+          <i class="fa fa-camera-retro prefix fa-fonts"></i>
+          <%= image_tag(post.image) if post.image? %><br>
+          <%= f.file_field :image %>
+          <%= f.hidden_field :image_cache %>
+        </div>
+
+        <div class="md-form">
           <i class="fa fa-tag prefix fa-fonts"></i>
           <%= f.text_field :title, placeholder: "Enter title", :autofocus => true, class: 'form-control' %>
         </div>
