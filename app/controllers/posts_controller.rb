@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     @post.user_id = current_user.id
-    @post.comment_id = @comment.id
+    # @post.comment_id = @comment.id
     if @post.save
       redirect_to @post, notice: 'Post was successfully created.'
     else
