@@ -1,5 +1,6 @@
 $primary-green: #21403F;
 $indigo: #3D466D;
+$orange-grad: #fc4a1a, #f7b733;
 
 
 @media (min-width: 768px) {
@@ -273,10 +274,6 @@ $indigo: #3D466D;
     background-color: $primary-green !important;
   }
 
-  // .fa-envelope, .fa-lock {
-  //   color: #fff;
-  // }
-
   .form-input {
     // color: #fff !important;
   }
@@ -349,16 +346,16 @@ $indigo: #3D466D;
       // background-color: rgba(0, 0, 0, 0.6);
     }
 
-    .fa-thumbs-up, .fa-thumbs-down {
-      color: #3B5998 !important;
-    }
-
     .logo-wrapper {
       #icon {
         width: 100% !important;
-        height:100%;
+        height:150px;
         padding: 20px;
       }
+    }
+
+    .side-nav .logo-wrapper {
+      height: 150px !important;
     }
 
     .side-nav .logo-wrapper, .side-nav .logo-wrapper a {
@@ -366,6 +363,13 @@ $indigo: #3D466D;
       width: 100%;
       background-color: transparent;
     }
+
+    .side-nav .logo-wrapper img {
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+      padding-top: 7%;
+      padding-bottom: 0;
+  }
 
     #icon {
       text-shadow: rgb(26, 51, 52) 0px 0px 0px, rgb(26, 52, 52) 1px 1px 0px, rgb(27, 52, 53) 2px 2px 0px, rgb(27, 53, 54) 3px 3px 0px, rgb(27, 54, 54) 4px 4px 0px, rgb(27, 54, 55) 5px 5px 0px, rgb(28, 55, 56) 6px 6px 0px, rgb(28, 55, 56) 7px 7px 0px, rgb(28, 56, 57) 8px 8px 0px, rgb(29, 57, 58) 9px 9px 0px, rgb(29, 57, 58) 10px 10px 0px, rgb(29, 58, 59) 11px 11px 0px, rgb(30, 59, 59) 12px 12px 0px, rgb(30, 59, 60) 13px 13px 0px, rgb(30, 60, 61) 14px 14px 0px, rgb(31, 60, 61) 15px 15px 0px, rgb(31, 61, 62) 16px 16px 0px, rgb(31, 62, 63) 17px 17px 0px, rgb(32, 62, 63) 18px 18px 0px, rgb(32, 63, 64) 19px 19px 0px, rgb(32, 64, 64) 20px 20px 0px, rgb(33, 64, 65) 21px 21px 0px, rgb(33, 65, 66) 22px 22px 0px, rgb(33, 65, 66) 23px 23px 0px, rgb(34, 66, 67) 24px 24px 0px, rgb(34, 67, 68) 25px 25px 0px, rgb(34, 67, 68) 26px 26px 0px, rgb(34, 68, 69) 27px 27px 0px, rgb(35, 69, 70) 28px 28px 0px, rgb(35, 69, 70) 29px 29px 0px, rgb(35, 70, 71) 30px 30px 0px, rgb(36, 70, 71) 31px 31px 0px, rgb(36, 71, 72) 32px 32px 0px, rgb(36, 72, 73) 33px 33px 0px, rgb(37, 72, 73) 34px 34px 0px; font-size: 80px; color: rgb(255, 255, 255); height: 150px; width: 150px; line-height: 150px; border-radius: 0%; text-align: center; #background-color: rgb(37, 73, 74);
@@ -385,8 +389,13 @@ $indigo: #3D466D;
       height: 27vh !important;
     }
 
+    #nancy-logo {
+      width: 100%;
+    }
+
     #icon {
-      background: url('https://github.com/cwilliams3579/Screenshots/blob/master/workout.jpg?raw=true') no-repeat center center;
+      // background: url('https://github.com/cwilliams3579/Screenshots/blob/master/workout.jpg?raw=true') no-repeat center center;
+      background-image: url("nancy-logo.png") no-repeat center center;
       background-size: cover;
       position: relative;
       width: 100%;
@@ -397,10 +406,6 @@ $indigo: #3D466D;
       // background:transparent;
     }
 
-#footer-img {
-  width: 100%;
-  height: 23vh;
-}
 
 #gallery-img {
   width: 100%;
@@ -408,10 +413,76 @@ $indigo: #3D466D;
 }
 
 .cyan-skin .card-header, .cyan-skin .form-header {
-    background-color: #25494A !important;
+    background-color: #29448B !important;
 }
 
 .fa-question-circle {
   font-size: 200px !important;
   height: 100vh !important;
+}
+
+.exercise-text {
+  // font-size: 72px;
+  margin-top: 15px;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.orange-gradient {
+  background: -webkit-linear-gradient(#fc4a1a, #f7b733);
+}
+
+.orange-gradient-text {
+  color: #fc4a1a, #f7b733 !important;
+}
+
+ .md-form .prefix.active {
+  color: (#fc4a1a, #f7b733);
+}
+
+.md-form .prefix.active {
+  color: -webkit-linear-gradient(#fc4a1a, #f7b733) !important;
+  background-color: $orange-grad;
+}
+.navbar, #footer {
+  background: $indigo;
+}
+
+#footer, .side-nav {
+  background: #29448B !important;
+}
+
+.fa-user, #fa-envelope, #fa-phone, #fa-map-marker, #fa-lock, .fa-lock, .fa-tag, .gallery-text {
+  // font-size: 72px;
+  background: -webkit-linear-gradient(#fc4a1a, #f7b733);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card {
+  padding: 20px;
+}
+
+#md-form {
+  margin-top: 40px;
+  margin-right: 0px;
+  margin-bottom: 40px;
+  margin-left: 0px;
+}
+
+.indigo-skin .card-header, .indigo-skin .form-header {
+  background-color: #29448B !important;
+}
+
+.indigo-skin .side-nav .collapsible li .collapsible-header.active {
+  background-color: -webkit-linear-gradient(#fc4a1a, #f7b733) !important;
+}
+
+.center {
+  text-align: center !important;
+}
+
+#mb-left {
+  float: left !important;
 }

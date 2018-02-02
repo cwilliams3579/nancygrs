@@ -3,29 +3,29 @@
 <div class="container-small">
     <div class="card">
       <div class="card-block" style="background:#fff;">
-        <div class="form-header green-gradient">
+        <div class="form-header indigo">
           <h3><i class="fa fa-pencil faa-horizontal animated"></i> Sign In</h3>
         </div>
         <%= render 'layouts/messages' %>
         <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %>
           <%= devise_error_messages! %>
           <div class="md-form">
-            <i class="fa fa-envelope prefix"></i>
+            <i class="fa fa-envelope fa-fonts prefix"></i>
             <%= f.label :email %>
             <%= f.email_field :email, :autofocus => true, class: 'form-control' %>
           </div>
           <div class="md-form">
-            <i class="fa fa-lock prefix"></i>
+            <i class="fa fa-lock fa-fonts prefix"></i>
             <%= f.password_field :password, placeholder: "Your password", class: 'form-control' %>
           </div>
 
             <div class="md-form">
-              <%= f.button "Sign In", class: "btn btn-block btn-lg green-gradient", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>Processing..."} %>
+              <%= f.button "Sign In", class: "btn btn-block btn-outline-white indigo waves-effect waves-light", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>Processing..."} %>
             </div>
             <% if devise_mapping.rememberable? -%>
               <div class="checkbox" style="width:150px">
                 <label>
-                  <%= f.check_box :remember_me %> Remember me
+                  <%= f.check_box :remember_me %>
                 </label>
               </div>
             <% end -%>

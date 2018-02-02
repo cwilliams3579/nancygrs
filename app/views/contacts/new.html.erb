@@ -1,11 +1,7 @@
 <% content_for :title do %>Contact<% end %>
 <br><br><br><br><br>
 <!--Section: Contact v.1-->
-<section class="section mb-4">
-
-  <!--Section heading-->
-  <h1 class="section-heading green-text">Generations Rehab Services</h1>
-  <!--Section sescription-->
+<section class="section mb-4" id="md-form">
 
   <div class="row">
 
@@ -17,7 +13,7 @@
 
         <div class="card-block">
           <!--Header-->
-          <div class="form-header green-gradient">
+          <div class="form-header btn-outline-white indigo">
             <h3><i class="fa fa-envelope"></i> Write to us</h3>
           </div>
 
@@ -28,17 +24,17 @@
           <!--Body-->
           <%= form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
             <div class="md-form">
-              <i class="fa fa-user prefix"></i>
+              <i class="fa fa-user prefix orange-text"></i>
               <%= f.text_field :name, autofocus: true, class:"form-control form-input" %>
             </div>
 
             <div class="md-form">
-              <i class="fa fa-envelope prefix"></i>
+              <i class="fa fa-envelope prefix" id="fa-envelope"></i>
               <%= f.text_field :email, required: true, placeholder: "johndoe@gmail.com", class:"form-control form-input" %>
             </div>
 
             <div class="md-form">
-              <i class="fa fa-phone prefix"></i>
+              <i class="fa fa-phone prefix" id="fa-phone"></i>
               <%= f.text_field :number, required: true, placeholder: "Your phone number", class:"form-control form-input" %>
             </div>
 
@@ -53,7 +49,7 @@
             </div>
 
             <div class="md-form">
-              <%= f.button "Send Message", class: "btn btn-block btn-lg green-gradient", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>Processing..."} %>
+              <%= f.button "Send Message", class: "btn btn-outline-white btn-block btn-lg indigo", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>Processing..."} %>
             </div>
           </div>
         <% end %>
@@ -73,21 +69,21 @@
       <!--Buttons-->
       <div class="row text-center">
         <div class="col-md-4">
-          <a class="btn-floating btn-small green-gradient"><i class="fa fa-map-marker"></i></a>
+          <a class="btn-floating btn-small orange-gradient"><i class="fa fa-map-marker"></i></a>
           <p>Excel Rehab Services</p>
           <p>10031 Pines BLVD Suite 217</p>
           <p>Pembroke Pines, FL 33024</p>
         </div>
 
         <div class="col-md-4">
-          <a class="btn-floating btn-small green-gradient"><i class="fa fa-phone"></i></a>
+          <a class="btn-floating btn-small orange-gradient"><i class="fa fa-phone"></i></a>
           <p>Phone: 954-305-5001</p>
           <p>Fax: 954-391-9736</p>
           <p>Mon - Fri, 8:00am 5:00pm</p>
         </div>
 
         <div class="col-md-4">
-          <a href="mailto:MsNancy.PT@gmail.com?Subject=Hello%20again" target="_top" class="btn-floating btn-small green-gradient"><i class="fa fa-envelope"></i></a>
+          <a href="mailto:MsNancy.PT@gmail.com?Subject=Hello%20again" target="_top" class="btn-floating btn-small orange-gradient"><i class="fa fa-envelope"></i></a>
           <p>Nancy Pierre-Destin, P.T</p>
           <p>MsNancy.PT@gmail.com</p>
         </div>

@@ -13,98 +13,100 @@
 ActiveRecord::Schema.define(version: 20170403001332) do
 
   create_table "comments", force: :cascade do |t|
-    t.integer  "post_id"
-    t.text     "comment"
+    t.integer "post_id"
+    t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "contacts", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "nickname"
-    t.string   "number"
-    t.text     "message"
+    t.string "name"
+    t.string "email"
+    t.string "nickname"
+    t.string "number"
+    t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "exercises", force: :cascade do |t|
-    t.string   "title"
-    t.text     "workout"
-    t.integer  "duration_in_min"
-    t.date     "workout_date"
-    t.integer  "user_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "image"
+    t.string "title"
+    t.text "workout"
+    t.integer "duration_in_min"
+    t.date "workout_date"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image"
     t.index ["user_id"], name: "index_exercises_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string   "title"
-    t.text     "content"
+    t.string "title"
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "user_id"
-    t.string   "image"
+    t.integer "user_id"
+    t.string "image"
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer  "rating"
-    t.text     "comment"
-    t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "exercise_id"
+    t.integer "rating"
+    t.text "comment"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "exercise_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "testimonials", force: :cascade do |t|
-    t.text     "content"
-    t.integer  "user_id"
+    t.text "content"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "rating"
+    t.integer "rating"
     t.index ["user_id"], name: "index_testimonials_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "confirmation_token"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.string   "unconfirmed_email"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.boolean  "admin"
+    t.string "unconfirmed_email"
+    t.string "first_name"
+    t.string "last_name"
+    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   create_table "votes", force: :cascade do |t|
-    t.string   "votable_type"
-    t.integer  "votable_id"
-    t.string   "voter_type"
-    t.integer  "voter_id"
-    t.boolean  "vote_flag"
-    t.string   "vote_scope"
-    t.integer  "vote_weight"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "votable_type"
+    t.integer "votable_id"
+    t.string "voter_type"
+    t.integer "voter_id"
+    t.boolean "vote_flag"
+    t.string "vote_scope"
+    t.integer "vote_weight"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
+    t.index ["votable_type", "votable_id"], name: "index_votes_on_votable_type_and_votable_id"
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
+    t.index ["voter_type", "voter_id"], name: "index_votes_on_voter_type_and_voter_id"
   end
 
 end

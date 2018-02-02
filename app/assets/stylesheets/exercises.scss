@@ -1,14 +1,18 @@
 .fa-fonts {
-  color: rgba(62,121,119,1);
-  color: -moz-linear-gradient(left, rgba(62,121,119,1) 0%, rgba(19,34,37,1) 100%);
-  color: -webkit-gradient(left top, right top, color-stop(0%, rgba(62,121,119,1)), color-stop(100%, rgba(19,34,37,1)));
-  color: -webkit-linear-gradient(left, rgba(62,121,119,1) 0%, rgba(19,34,37,1) 100%);
-  color: -o-linear-gradient(left, rgba(62,121,119,1) 0%, rgba(19,34,37,1) 100%);
-  color: -ms-linear-gradient(left, rgba(62,121,119,1) 0%, rgba(19,34,37,1) 100%);
-  color: linear-gradient(to right, rgba(62,121,119,1) 0%, rgba(19,34,37,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e7977', endColorstr='#132225', GradientType=1 );
+  background: -webkit-linear-gradient(#fc4a1a, #f7b733) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
 }
 
 .fa-clock {
   color: #21403F !important;
+}
+
+.md-form .prefix {
+  -webkit-transition: color .2s;
+  transition: color .2s;
+  position: absolute;
+  width: 3rem;
+  font-size: 2rem;
+  padding-top: 1.5rem !important;
 }
