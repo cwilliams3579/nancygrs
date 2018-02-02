@@ -56,12 +56,12 @@ class ExercisesController < ApplicationController
 
   def upvote
     @exercise.upvote_by current_user
-    redirect_to :back
+    redirect_back(fallback_location: @exercise)
   end
 
   def downvote
     @exercise.downvote_by current_user
-    redirect_to :back
+    redirect_back(fallback_location: @exercise)
   end
 
   private

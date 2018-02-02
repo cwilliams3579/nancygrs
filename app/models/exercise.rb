@@ -12,6 +12,8 @@ class Exercise < ApplicationRecord
     self.get_upvotes.size - self.get_downvotes.size
   end
 
+
+
   private
 
   def image_size

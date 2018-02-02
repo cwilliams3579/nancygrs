@@ -36,7 +36,7 @@
            <!-- Side navigation links -->
            <li>
                <ul class="collapsible collapsible-accordion">
-                   <li><a class="collapsible-header waves-effect arrow-r wow zoomIn" data-wow-delay="1s"><i class="fa fa-line-chart faa-float animated-hover"></i> Exercise<i class="fa fa-angle-down rotate-icon"></i></a>
+                   <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-line-chart faa-float animated-hover"></i> Exercise<i class="fa fa-angle-down rotate-icon"></i></a>
                        <div class="collapsible-body">
                            <ul>
                               <li>
@@ -52,7 +52,7 @@
                    </li>
 
                    <li>
-                     <a class="collapsible-header waves-effect arrow-r wow zoomIn" data-wow-delay="1.2s">
+                     <a class="collapsible-header waves-effect arrow-r ">
                        <i class="fa fa-camera-retro faa-tada animated-hover"></i> Gallery<i class="fa fa-angle-down rotate-icon"></i>
                      </a>
                        <div class="collapsible-body">
@@ -70,7 +70,7 @@
                    </li>
 
                    <li>
-                     <a class="collapsible-header waves-effect arrow-r wow zoomIn" data-wow-delay="1.4s">
+                     <a class="collapsible-header waves-effect arrow-r">
                        <i class="fa fa-pencil faa-horizontal animated-hover"></i> Blog<i class="fa fa-angle-down rotate-icon"></i>
                      </a>
                        <div class="collapsible-body">
@@ -86,7 +86,7 @@
                            </ul>
                        </div>
                    </li>
-                   <li><a  class="collapsible-header waves-effect arrow-r wow zoomIn" data-wow-delay="1.6s"><i class="fa fa-eye faa-pulse animated-hover"></i> About US<i class="fa fa-angle-down rotate-icon"></i></a>
+                   <li><a  class="collapsible-header waves-effect arrow-r"><i class="fa fa-eye faa-pulse animated-hover"></i> About US<i class="fa fa-angle-down rotate-icon"></i></a>
                        <div class="collapsible-body">
                            <ul>
                                <li>
@@ -96,7 +96,7 @@
                        </div>
                    </li>
                    <li>
-                     <a class="collapsible-header waves-effect arrow-r wow zoomIn" data-wow-delay="1.8s">
+                     <a class="collapsible-header waves-effect arrow-r">
                        <i class="fa fa-envelope-o faa-shake animated-hover"></i> Contact<i class="fa fa-angle-down rotate-icon"></i>
                      </a>
                        <div class="collapsible-body">
@@ -114,7 +114,7 @@
                        </div>
                    </li>
                    <li>
-                     <a class="collapsible-header waves-effect arrow-r wow zoomIn" data-wow-delay="1.8s">
+                     <a class="collapsible-header waves-effect arrow-r">
                        <i class="fa fa-question faa-bounce animated-hover"></i> FAQ<i class="fa fa-angle-down rotate-icon"></i>
                      </a>
                        <div class="collapsible-body">
@@ -132,7 +132,7 @@
            </li>
            <!--/. Side navigation links -->
            <div class="sidenav-bg mask-strong"></div><br>
-           <div class="fb-page" data-href="https://www.facebook.com/GenerationsRehabServicesInternational/" data-tabs="timeline" data-width="500" data-height="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/GenerationsRehabServicesInternational/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/GenerationsRehabServicesInternational/">Generations Rehab Services</a></blockquote>
+            <div class="fb-page" data-href="https://www.facebook.com/GenerationsRehabServicesInternational/" data-tabs="timeline" data-width="500" data-height="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/GenerationsRehabServicesInternational/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/GenerationsRehabServicesInternational/">Generations Rehab Services</a></blockquote>
            </div>
        </ul>
        <!--/. Sidebar navigation -->
@@ -144,13 +144,13 @@
            </div>
            <!-- Breadcrumb-->
            <div class="breadcrumb-dn mr-auto">
-             &nbsp; &nbsp; &nbsp;<a href="/"><i class="fa fa-hospital-o fa-2x wow zoomIn"></i></a>&nbsp; &nbsp;
+             &nbsp; &nbsp; &nbsp;<a href="/"><i class="fa fa-hospital-o fa-2x "></i></a>&nbsp; &nbsp;
              <%= link_to "Generations Rehab Services", root_path, class: 'navbar-brand wow jello' %>
            </div>
            <ul class="nav navbar-nav ml-auto flex-row">
       
              <li class="nav-item dropdown btn-group">
-                    <a class="nav-link dropdown-toggle wow zoomIn" data-wow-delay="1.6s" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-globe faa-spin animated-hover"></i><span class="hidden-sm-down"> Language</span></a>
+                    <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-globe faa-spin animated-hover"></i><span class="hidden-sm-down"> Language</span></a>
                     <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenu1">
                         <a class="dropdown-item">English</a>
                         <a class="dropdown-item">Creole</a>
@@ -161,19 +161,19 @@
             <% if user_signed_in? %>
               <li class="nav-item">
 
-                <a href="/users/edit" class="nav-link wow zoomIn" data-wow-delay="1.8s"><i class="fa fa-user-secret faa-tada animated-hover"></i> <span class="hidden-sm-down"><%= current_user.first_name.capitalize %></span></a>
+                <a href="/users/edit" class="nav-link "><i class="fa fa-user-secret faa-tada animated-hover"></i> <span class="hidden-sm-down"><%= current_user.first_name.capitalize %></span></a>
               </li>&nbsp; &nbsp;
               <li class="nav-item">
-                <a class="nav-link wow zoomIn" data-wow-delay="2s" rel="nofollow" data-method="delete" href="/users/sign_out"><i class="fa fa-sign-out faa-tada animated-hover"></i> <span class="hidden-sm-down">Sign Out</span></a>
+                <a class="nav-link" rel="nofollow" data-method="delete" href="/users/sign_out"><i class="fa fa-sign-out faa-tada animated-hover"></i> <span class="hidden-sm-down">Sign Out</span></a>
               </li>&nbsp; &nbsp;
             <% else %>
               <li class="nav-item">
-                <a class="nav-link wow zoomIn" data-wow-delay="2s" data-toggle="modal" data-target="#modal-register">
+                <a class="nav-link" data-toggle="modal" data-target="#modal-register">
                   <i class="fa fa-user-plus faa-tada animated-hover"></i> <span class="hidden-sm-down">Sign Up</span>
                 </a>
               </li>&nbsp; &nbsp;
               <li class="nav-item">
-                <a class="nav-link wow zoomIn" data-wow-delay="2.2s" data-wow-offset="10" data-toggle="modal" data-target="#modal-login"><i class="fa fa-sign-in faa-tada animated-hover"></i> <span class="hidden-sm-down">Sign In</span>
+                <a class="nav-link " data-toggle="modal" data-target="#modal-login"><i class="fa fa-sign-in faa-tada animated-hover"></i> <span class="hidden-sm-down">Sign In</span>
                 </a>
               </li>&nbsp; &nbsp;
             <% end %>

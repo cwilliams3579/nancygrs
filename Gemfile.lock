@@ -313,6 +313,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (12.3.0)
+    ratyrate (1.2.2.alpha)
     rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
@@ -409,6 +410,7 @@ DEPENDENCIES
   rails-assets-tether!
   rails_apps_pages
   rails_layout
+  ratyrate
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)

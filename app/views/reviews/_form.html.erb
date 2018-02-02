@@ -1,9 +1,16 @@
 <br><br><br><br><br><br>
 <div class="container-small">
   <div class="card">
-    <div class="card-block" style="background:white;">
-      <div class="form-header green-gradient">
-        <h3><i class="fa fa-star fa-lg faa-spin animated-hover" aria-label="true"></i></h3>
+    <div class="card-block">
+      <div class="form-header indigo btn-outline-white">
+        <h3>
+          <i class="fa fa-star faa-spin animated-hover fa-fonts" aria-label="true"></i>
+          <i class="fa fa-star faa-spin animated-hover fa-fonts" aria-label="true"></i>
+          <i class="fa fa-star faa-spin animated-hover fa-fonts" aria-label="true"></i>
+          <i class="fa fa-star faa-spin animated-hover fa-fonts" aria-label="true"></i>
+          <i class="fa fa-star faa-spin animated-hover fa-fonts" aria-label="true"></i>
+        
+        </h3>
       </div>
       <%= form_for([@exercise, @review]) do |f| %>
         <% if review.errors.any? %>
@@ -19,17 +26,19 @@
         <% end %>
 
         <div class="md-form">
-          <i class="fa fa-star fa-2x prefix" id="review-star" aria-hidden="true"></i>
+          <i class="fa fa-star fa-2x prefix fa-fonts" id="review-star" aria-hidden="true"></i>
           <%= f.number_field :rating %>
+
+          
         </div>
 
         <div class="md-form">
-          <i class="fa fa-comment-o fa-2x prefix" aria-hidden="true"></i>
+          <i class="fa fa-comment-o fa-2x prefix fa-fonts" aria-hidden="true"></i>
           <%= f.text_area :comment, class: "md-textarea" %>
         </div>
 
         <div class="md-form">
-          <%= f.button class: "btn btn-block btn-lg green-gradient", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>Processing..."} %>
+          <%= f.button class: "btn btn-block btn-outline-white indigo waves-effect waves-light", data: { disable_with: "<i class='fa fa-spinner fa-spin'></i>Processing..."} %>
         </div>
       <% end %>
     </div>

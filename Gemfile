@@ -46,6 +46,7 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'devise'
 gem 'high_voltage'
+gem 'ratyrate'
 
 source "https://rails-assets.org" do
   gem "rails-assets-tether"
