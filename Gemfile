@@ -47,6 +47,8 @@ gem 'bootstrap', '~> 4.0'
 gem 'devise'
 gem 'high_voltage'
 gem 'ratyrate'
+gem 'kaminari'
+
 
 source "https://rails-assets.org" do
   gem "rails-assets-tether"

@@ -3,6 +3,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= content_for?(:title) ? yield(:title) : "Generationsrs" %></title>
+  <%= favicon_link_tag 'physician.png' %>
   <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Generationsrs" %>">
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'track' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>

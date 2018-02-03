@@ -110,7 +110,8 @@
 
                     <!--Section: Design-->
                     <section class="section text-center text-lg-left">
-
+                        
+                        <% Post.all.each do |post| %>
                         <!--First row-->
                         <div class="row mb-3">
 
@@ -119,7 +120,8 @@
 
                                 <!--Image-->
                                 <div class="view hm-white-slight">
-                                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Things/4-col/img%20%286%29.jpg" class="img-fluid" alt="Post Image">
+                                    <!-- <img src="https://mdbootstrap.com/img/Photos/Horizontal/Things/4-col/img%20%286%29.jpg" class="img-fluid" alt="Post Image"> -->
+                                    <%= image_tag( post.image, class: "img-fluid", alt: "Post Image" ) %>
                                     <div class="mask waves-effect waves-light"></div>
                                 </div>
                                 <!--/Image-->
@@ -129,423 +131,32 @@
 
                             <!--Second column-->
                             <div class="col-lg-7">
+                                    <!--Excerpt-->
+                                    <h6 class="text-muted mb-1"><%= post.created_at.strftime("%m/%d/%Y")  %></h6>
+                                    <h4 class="font-up mb-1 text-muted font-thin"><%= post.title.capitalize %></h4>
+                                    <p class="text-muted font-thin"><%= truncate(post.content, length: 200) %></p>
+                                    <%= link_to "Read more", post, class: "btn btn-outline-white indigo waves-effect" %>
+                                    <!--/Excerpt-->
 
-                                <!--Excerpt-->
-                                <h6 class="text-muted mb-1">01/02/2017</h6>
-                                <h4 class="font-up mb-1"><a href="#!" class="text-muted font-thin">This is title of the news</a></h4>
-                                <p class="text-muted font-thin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi nesciunt esse vero adipisci commodi laborum fugiat aperiam rem illum corrupti aliquid labore quod.</p>
-                                <a href="#!" type="button" class="btn btn-outline-white indigo waves-effect">Read more</a>
-                                <!--/Excerpt-->
-
-                            </div>
-                            <!--/Second column-->
-
-                        </div>
-                        <!--/First row-->
-
-                        <!--Second row-->
-                        <div class="row mb-3">
-
-                            <!--First column-->
-                            <div class="col-lg-5 mb-1-half">
-
-                                <!--Image-->
-                                <div class="view hm-white-slight">
-                                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%28129%29.jpg" class="img-fluid" alt="Post Image">
-                                    <div class="mask waves-effect waves-light"></div>
                                 </div>
-                                <!--/Image-->
-
+                                <!--/Second column-->
                             </div>
-                            <!--/First column-->
-
-                            <!--Second column-->
-                            <div class="col-lg-7">
-
-                                <!--Excerpt-->
-                                <h6 class="text-muted mb-1">31/01/2017</h6>
-                                <h4 class="font-up mb-1"><a href="#!" class="text-muted font-thin">This is title of the news</a></h4>
-                                <p class="text-muted font-thin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi nesciunt esse vero adipisci commodi laborum fugiat aperiam rem illum corrupti aliquid labore quod.</p>
-                                <a href="#!" type="button" class="btn btn-outline-white indigo waves-effect">Read more</a>
-                                <!--/Excerpt-->
-
-                            </div>
-                            <!--/Second column-->
-
-                        </div>
-                        <!--/Second row-->
-
-                        <!--Third row-->
-                        <div class="row mb-3">
-
-                            <!--First column-->
-                            <div class="col-lg-5 mb-1-half">
-
-                                <!--Image-->
-                                <div class="view hm-white-slight">
-                                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Architecture/4-col/img%20%2812%29.jpg" class="img-fluid" alt="Post Image">
-                                    <div class="mask waves-effect waves-light"></div>
-                                </div>
-                                <!--/Image-->
-
-                            </div>
-                            <!--/First column-->
-
-                            <!--Second column-->
-                            <div class="col-lg-7">
-
-                                <!--Excerpt-->
-                                <h6 class="text-muted mb-1">30/01/2017</h6>
-                                <h4 class="font-up mb-1"><a href="#!" class="text-muted font-thin">This is title of the news</a></h4>
-                                <p class="text-muted font-thin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi nesciunt esse vero adipisci commodi laborum fugiat aperiam rem illum corrupti aliquid labore quod.</p>
-                                <a href="#!" type="button" class="btn btn-outline-white indigo waves-effect">Read more</a>
-                                <!--/Excerpt-->
-
-                            </div>
-                            <!--/Second column-->
-
-                        </div>
-                        <!--/Third row-->
-
+                            <!--/First row-->
+                            <% end %>
+                    
                     </section>
                     <!--/Section: Design-->
-
-                    <div class="divider-new">
-                        <h2>Travels</h2>
-                    </div>
-
-                    <!--Section: Travels-->
-                    <section class="section text-center text-lg-left">
-
-                        <!--First row-->
-                        <div class="row mb-3">
-
-                            <!--First column-->
-                            <div class="col-lg-5 mb-1-half">
-
-                                <!--Image-->
-                                <div class="view hm-white-slight">
-                                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%28122%29.jpg" class="img-fluid" alt="Post Image">
-                                    <div class="mask waves-effect waves-light"></div>
-                                </div>
-                                <!--/Image-->
-
-                            </div>
-                            <!--/First column-->
-
-                            <!--Second column-->
-                            <div class="col-lg-7">
-
-                                <!--Excerpt-->
-                                <h6 class="text-muted mb-1">29/01/2017</h6>
-                                <h4 class="font-up mb-1"><a href="#!" class="text-muted font-thin">This is title of the news</a></h4>
-                                <p class="text-muted font-thin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi nesciunt esse vero adipisci commodi laborum fugiat aperiam rem illum corrupti aliquid labore quod.</p>
-                                <a href="#!" type="button" class="btn btn-outline-white indigo waves-effect">Read more</a>
-                                <!--/Excerpt-->
-
-                            </div>
-                            <!--/Second column-->
-
-                        </div>
-                        <!--/First row-->
-
-                        <!--Second row-->
-                        <div class="row mb-3">
-
-                            <!--First column-->
-                            <div class="col-lg-5 mb-1-half">
-
-                                <!--Image-->
-                                <div class="view hm-white-slight">
-                                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%28117%29.jpg" class="img-fluid" alt="Post Image">
-                                    <div class="mask waves-effect waves-light"></div>
-                                </div>
-                                <!--/Image-->
-
-                            </div>
-                            <!--/First column-->
-
-                            <!--Second column-->
-                            <div class="col-lg-7">
-
-                                <!--Excerpt-->
-                                <h6 class="text-muted mb-1">28/01/2017</h6>
-                                <h4 class="font-up mb-1"><a href="#!" class="text-muted font-thin">This is title of the news</a></h4>
-                                <p class="text-muted font-thin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi nesciunt esse vero adipisci commodi laborum fugiat aperiam rem illum corrupti aliquid labore quod.</p>
-                                <a href="#!" type="button" class="btn btn-outline-white indigo waves-effect">Read more</a>
-                                <!--/Excerpt-->
-
-                            </div>
-                            <!--/Second column-->
-
-                        </div>
-                        <!--/Second row-->
-
-                        <!--Third row-->
-                        <div class="row mb-3">
-
-                            <!--First column-->
-                            <div class="col-lg-5 mb-1-half">
-
-                                <!--Image-->
-                                <div class="view hm-white-slight">
-                                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%28120%29.jpg" class="img-fluid" alt="Post Image">
-                                    <div class="mask waves-effect waves-light"></div>
-                                </div>
-                                <!--/Image-->
-
-                            </div>
-                            <!--/First column-->
-
-                            <!--Second column-->
-                            <div class="col-lg-7">
-
-                                <!--Excerpt-->
-                                <h6 class="text-muted mb-1">27/01/2017</h6>
-                                <h4 class="font-up mb-1"><a href="#!" class="text-muted font-thin">This is title of the news</a></h4>
-                                <p class="text-muted font-thin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi nesciunt esse vero adipisci commodi laborum fugiat aperiam rem illum corrupti aliquid labore quod.</p>
-                                <a href="#!" type="button" class="btn btn-outline-white indigo waves-effect">Read more</a>
-                                <!--/Excerpt-->
-
-                            </div>
-                            <!--/Second column-->
-
-                        </div>
-                        <!--/Third row-->
-
-                    </section>
-                    <!--/Section: Travels-->
-
-                    <div class="divider-new">
-                        <h2>Recent posts</h2>
-                    </div>
-
-                    <!--Section: Recent posts-->
-                    <section class="section text-center text-lg-left">
-
-                        <!--First row-->
-                        <div class="row mb-3">
-
-                            <!--First column-->
-                            <div class="col-lg-5 mb-1-half">
-
-                                <!--Image-->
-                                <div class="view hm-white-slight">
-                                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Architecture/4-col/img%20%2811%29.jpg" class="img-fluid" alt="Post Image">
-                                    <div class="mask waves-effect waves-light"></div>
-                                </div>
-                                <!--/Image-->
-
-                            </div>
-                            <!--/First column-->
-
-                            <!--Second column-->
-                            <div class="col-lg-7">
-
-                                <!--Excerpt-->
-                                <h6 class="text-muted mb-1">26/01/2017</h6>
-                                <h4 class="font-up mb-1"><a href="#!" class="text-muted font-thin">This is title of the news</a></h4>
-                                <p class="text-muted font-thin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi nesciunt esse vero adipisci commodi laborum fugiat aperiam rem illum corrupti aliquid labore quod.</p>
-                                <a href="#!" type="button" class="btn btn-outline-white indigo waves-effect">Read more</a>
-                                <!--/Excerpt-->
-
-                            </div>
-                            <!--/Second column-->
-
-                        </div>
-                        <!--/First row-->
-
-                        <!--Second row-->
-                        <div class="row mb-3">
-
-                            <!--First column-->
-                            <div class="col-lg-5 mb-1-half">
-
-                                <!--Image-->
-                                <div class="view hm-white-slight">
-                                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20%2846%29.jpg" class="img-fluid" alt="Post Image">
-                                    <div class="mask waves-effect waves-light"></div>
-                                </div>
-                                <!--/Image-->
-
-                            </div>
-                            <!--/First column-->
-
-                            <!--Second column-->
-                            <div class="col-lg-7">
-
-                                <!--Excerpt-->
-                                <h6 class="text-muted mb-1">25/01/2017</h6>
-                                <h4 class="font-up mb-1"><a href="#!" class="text-muted font-thin">This is title of the news</a></h4>
-                                <p class="text-muted font-thin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi nesciunt esse vero adipisci commodi laborum fugiat aperiam rem illum corrupti aliquid labore quod.</p>
-                                <a href="#!" type="button" class="btn btn-outline-white indigo waves-effect">Read more</a>
-                                <!--/Excerpt-->
-
-                            </div>
-                            <!--/Second column-->
-
-                        </div>
-                        <!--/Second row-->
-
-                        <!--Third row-->
-                        <div class="row mb-3">
-
-                            <!--First column-->
-                            <div class="col-lg-5 mb-1-half">
-
-                                <!--Image-->
-                                <div class="view hm-white-slight">
-                                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20%2856%29.jpg" class="img-fluid" alt="Post Image">
-                                    <div class="mask waves-effect waves-light"></div>
-                                </div>
-                                <!--/Image-->
-
-                            </div>
-                            <!--/First column-->
-
-                            <!--Second column-->
-                            <div class="col-lg-7">
-
-                                <!--Excerpt-->
-                                <h6 class="text-muted mb-1">24/01/2017</h6>
-                                <h4 class="font-up mb-1"><a href="#!" class="text-muted font-thin">This is title of the news</a></h4>
-                                <p class="text-muted font-thin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi nesciunt esse vero adipisci commodi laborum fugiat aperiam rem illum corrupti aliquid labore quod.</p>
-                                <a href="#!" type="button" class="btn btn-outline-white indigo waves-effect">Read more</a>
-                                <!--/Excerpt-->
-
-                            </div>
-                            <!--/Second column-->
-
-                        </div>
-                        <!--/Third row-->
-
-                        <!--Fourth row-->
-                        <div class="row mb-3">
-
-                            <!--First column-->
-                            <div class="col-lg-5 mb-1-half">
-
-                                <!--Image-->
-                                <div class="view hm-white-slight">
-                                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20%2857%29.jpg" class="img-fluid" alt="Post Image">
-                                    <div class="mask waves-effect waves-light"></div>
-                                </div>
-                                <!--/Image-->
-
-                            </div>
-                            <!--/First column-->
-
-                            <!--Second column-->
-                            <div class="col-lg-7">
-
-                                <!--Excerpt-->
-                                <h6 class="text-muted mb-1">23/01/2017</h6>
-                                <h4 class="font-up mb-1"><a href="#!" class="text-muted font-thin">This is title of the news</a></h4>
-                                <p class="text-muted font-thin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi nesciunt esse vero adipisci commodi laborum fugiat aperiam rem illum corrupti aliquid labore quod.</p>
-                                <a href="#!" type="button" class="btn btn-outline-white indigo waves-effect">Read more</a>
-                                <!--/Excerpt-->
-
-                            </div>
-                            <!--/Second column-->
-
-                        </div>
-                        <!--/Fourth row-->
-
-                        <!--Fifth row-->
-                        <div class="row mb-3">
-
-                            <!--First column-->
-                            <div class="col-lg-5 mb-1-half">
-
-                                <!--Image-->
-                                <div class="view hm-white-slight">
-                                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%28126%29.jpg" class="img-fluid" alt="Post Image">
-                                    <div class="mask waves-effect waves-light"></div>
-                                </div>
-                                <!--/Image-->
-
-                            </div>
-                            <!--/First column-->
-
-                            <!--Second column-->
-                            <div class="col-lg-7">
-
-                                <!--Excerpt-->
-                                <h6 class="text-muted mb-1">22/01/2017</h6>
-                                <h4 class="font-up mb-1"><a href="#!" class="text-muted font-thin">This is title of the news</a></h4>
-                                <p class="text-muted font-thin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi nesciunt esse vero adipisci commodi laborum fugiat aperiam rem illum corrupti aliquid labore quod.</p>
-                                <a href="#!" type="button" class="btn btn-outline-white indigo waves-effect">Read more</a>
-                                <!--/Excerpt-->
-
-                            </div>
-                            <!--/Second column-->
-
-                        </div>
-                        <!--/Fifth row-->
-
-                        <!--Sixth row-->
-                        <div class="row mb-3">
-
-                            <!--First column-->
-                            <div class="col-lg-5 mb-1-half">
-
-                                <!--Image-->
-                                <div class="view hm-white-slight">
-                                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Things/4-col/img%20(8).jpg" class="img-fluid" alt="Post Image">
-                                    <div class="mask waves-effect waves-light"></div>
-                                </div>
-                                <!--/Image-->
-
-                            </div>
-                            <!--/First column-->
-
-                            <!--Second column-->
-                            <div class="col-lg-7">
-
-                                <!--Excerpt-->
-                                <h6 class="text-muted mb-1">21/01/2017</h6>
-                                <h4 class="font-up mb-1"><a href="#!" class="text-muted font-thin">This is title of the news</a></h4>
-                                <p class="text-muted font-thin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi nesciunt esse vero adipisci commodi laborum fugiat aperiam rem illum corrupti aliquid labore quod.</p>
-                                <a href="#!" type="button" class="btn btn-outline-white indigo waves-effect">Read more</a>
-                                <!--/Excerpt-->
-
-                            </div>
-                            <!--/Second column-->
-
-                        </div>
-                        <!--/Sixth row-->
-
-                    </section>
-                    <!--/Section: Recent posts-->
-
+                   
                     <!--Pagination dark grey-->
                     <nav>
                        <ul class="pagination pg-darkgrey flex-center mt-5 mb-5">
-                           <!--Arrow left-->
-                           <li class="page-item">
-                               <a class="page-link waves-effect waves-effect" aria-label="Previous">
-                                   <span aria-hidden="true">«</span>
-                                   <span class="sr-only">Previous</span>
-                               </a>
-                           </li>
-
-                           <!--Numbers-->
-                           <li class="page-item active"><a class="page-link waves-effect waves-effect">1</a></li>
-                           <li class="page-item"><a class="page-link waves-effect waves-effect">2</a></li>
-                           <li class="page-item"><a class="page-link waves-effect <wa></wa>ves-effect">3</a></li>
-                           <li class="page-item"><a class="page-link waves-effect waves-effect">4</a></li>
-                           <li class="page-item"><a class="page-link waves-effect waves-effect">5</a></li>
-
-                           <!--Arrow right-->
-                           <li class="page-item">
-                               <a class="page-link waves-effect waves-effect" aria-label="Next">
-                                   <span aria-hidden="true">»</span>
-                                   <span class="sr-only">Next</span>
-                               </a>
-                           </li>
+                      
+                           <li><%= paginate @posts %></li>
                        </ul>
+                       
                     </nav>
                     <!--/Pagination dark grey-->
+
 
                 </div>
                 <!--/Newsfeed-->
@@ -558,30 +169,32 @@
 
                         <!--Card-->
                         <div class="card author-card">
-
-                            <!--Background image-->
-                            <div class="card-up">
-                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/8-col/img%20%28120%29.jpg" class="img-fluid">
-                            </div>
-
                             <!--Avatar-->
                             <div class="avatar">
-                                <img src="https://scontent-dft4-1.xx.fbcdn.net/v/t1.0-9/17362774_10208465769028124_1599881355786113622_n.jpg?oh=6c610a521dba3e29fd327cc6cf9c690f&oe=598D250B" class="img-fluid img-author">
+                                <%= image_tag("avatar.ico", size: "16x10", class: "img-fluid img-author", alt: "Edit Entry") %>
                             </div>
 
                             <div class="card-block">
 
                                 <!--Name-->
-                                <h4 class="card-title font-up">Nancy Destin</h4>
+                                <h4 class="card-title font-up text-center">Nancy Destin</h4>
                                 <!--Description-->
                                 <p class="font-thin">Hello, I'm Nancy I've 22 years old and my biggest passion is physical therapy. I love travel around the world and take photos of wild animals, landscapes and local people.</p>
 
-                                <!--Dribbble-->
-                                <a class="icons-sm drib-ic"><i class="fa fa-dribbble"> </i></a>
-                                <!--Instagram-->
-                                <a class="icons-sm ins-ic"><i class="fa fa-instagram"> </i></a>
-                                <!--Pinterest-->
-                                <a class="icons-sm pin-ic"><i class="fa fa-pinterest"> </i></a>
+                                <div class="mx-auto">
+                                    <!--Dribbble-->
+                                    <a class="icons-sm drib-ic">
+                                        <i class="fa fa-dribbble"> </i>
+                                    </a>
+                                    <!--Instagram-->
+                                    <a class="icons-sm ins-ic">
+                                        <i class="fa fa-instagram"> </i>
+                                    </a>
+                                    <!--Pinterest-->
+                                    <a class="icons-sm pin-ic">
+                                        <i class="fa fa-pinterest"> </i>
+                                    </a>
+                                </div>
 
                             </div>
 
@@ -591,93 +204,6 @@
                     </section>
                     <!--/Author card-->
 
-                    <div class="divider-new wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
-                        <h3>Featured posts</h3>
-                    </div>
-
-                    <!--Featured posts-->
-                    <section class="section">
-
-                        <!--First row-->
-                        <div class="row">
-
-                            <!--First column-->
-                            <div class="col-md-12">
-
-                                <!--Image-->
-                                <div class="view overlay hm-white-slight mb-1">
-                                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/City/8-col/img%20%2857%29.jpg" class="img-fluid" alt="Post">
-                                    <a href="#!">
-                                        <div class="mask waves-effect waves-light"></div>
-                                    </a>
-                                </div>
-
-                                <!--Post data-->
-                                <div class="mb-3-half font-thin">
-                                    <p class="text-muted float-left"><i class="fa fa-clock-o"></i> 23/10/2017</p>
-                                    <span class="text-muted float-right"><i class="fa fa-comments-o"></i> 145</span>
-                                </div>
-
-                                <!--Post title-->
-                                <a href="#!" class="text-hover font-thin">This is title of the news</a>
-                                <div class="post-border pt-1"></div>
-
-                            </div>
-                            <!--/First column-->
-
-                            <!--Second column-->
-                            <div class="col-md-12">
-
-                                <!--Image-->
-                                <div class="view overlay hm-white-slight mb-1">
-                                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/8-col/img%20%28131%29.jpg" class="img-fluid" alt="Post">
-                                    <a href="#!">
-                                        <div class="mask waves-effect waves-light"></div>
-                                    </a>
-                                </div>
-
-                                <!--Post data-->
-                                <div class="mb-3-half font-thin">
-                                    <p class="text-muted float-left"><i class="fa fa-clock-o"></i> 22/10/2017</p>
-                                    <span class="text-muted float-right"><i class="fa fa-comments-o"></i> 128</span>
-                                </div>
-
-                                <!--Post title-->
-                                <a href="#!" class="text-hover font-thin">This is title of the news</a>
-                                <div class="post-border pt-1"></div>
-
-                            </div>
-                            <!--/Second column-->
-
-                            <!--Third column-->
-                            <div class="col-md-12">
-
-                                <!--Image-->
-                                <div class="view overlay hm-white-slight mb-1">
-                                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/8-col/img%20%28120%29.jpg" class="img-fluid" alt="Post">
-                                    <a href="#!">
-                                        <div class="mask waves-effect waves-light"></div>
-                                    </a>
-                                </div>
-
-                                <!--Post data-->
-                                <div class="mb-3-half font-thin">
-                                    <p class="text-muted float-left"><i class="fa fa-clock-o"></i> 21/10/2017</p>
-                                    <span class="text-muted float-right"><i class="fa fa-comments-o"></i> 203</span>
-                                </div>
-
-                                <!--Post title-->
-                                <a href="#!" class="text-hover font-thin">This is title of the news</a>
-                                <div class="post-border pt-1 mb-0"></div>
-
-                            </div>
-                            <!--/Third column-->
-
-                        </div>
-                        <!--/First row-->
-
-                    </section>
-                    <!--/Featured posts-->
 
                     <div class="divider-new wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
                         <h3>Newsletter</h3>
@@ -735,247 +261,7 @@
                     </section>
                     <!--/Newsletter-->
 
-                    <div class="divider-new wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
-                        <h3>Popular posts</h3>
-                    </div>
-
-                    <!--Section: Popular posts-->
-                    <section class="section">
-
-                        <div class="post-border">
-
-                            <!--First row-->
-                            <div class="row">
-
-                                <!--First column-->
-                                <div class="col-4">
-
-                                    <!--Image-->
-                                    <div class="view overlay hm-white-slight mb-1-half">
-                                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%28125%29.jpg" class="img-fluid" alt="Post">
-                                        <a>
-                                            <div class="mask waves-effect waves-light"></div>
-                                        </a>
-                                    </div>
-
-                                </div>
-                                <!--/First column-->
-
-                                <!--Second column-->
-                                <div class="col-8 mb-1">
-
-                                    <!--Post data-->
-                                    <div class="mb-2-half font-thin">
-                                        <p class="text-muted float-left"><i class="fa fa-clock-o"></i> 20/01/2017</p>
-                                        <span class="text-muted float-right"><i class="fa fa-comments-o"></i> 215</span>
-                                    </div>
-
-                                    <a href="#!" class="text-hover font-thin">This is news title</a>
-
-                                </div>
-                                <!--/Second column-->
-
-                            </div>
-                            <!--/First row-->
-
-                        </div>
-
-                        <div class="post-border">
-
-                            <!--Second row-->
-                            <div class="row">
-
-                                <!--First column-->
-                                <div class="col-4">
-
-                                    <!--Image-->
-                                    <div class="view overlay hm-white-slight mb-1-half">
-                                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%28123%29.jpg" class="img-fluid" alt="Post">
-                                        <a>
-                                            <div class="mask waves-effect waves-light"></div>
-                                        </a>
-                                    </div>
-
-                                </div>
-                                <!--/First column-->
-
-                                <!--Second column-->
-                                <div class="col-8 mb-1">
-
-                                    <!--Post data-->
-                                    <div class="mb-2-half font-thin">
-                                        <p class="text-muted float-left"><i class="fa fa-clock-o"></i> 19/01/2017</p>
-                                        <span class="text-muted float-right"><i class="fa fa-comments-o"></i> 176</span>
-                                    </div>
-
-                                    <a href="#!" class="text-hover font-thin">This is news title</a>
-
-                                </div>
-                                <!--/Second column-->
-
-                            </div>
-                            <!--/Second row-->
-
-                        </div>
-
-                        <div class="post-border">
-
-                            <!--Third row-->
-                            <div class="row">
-
-                                <!--First column-->
-                                <div class="col-4">
-
-                                    <!--Image-->
-                                    <div class="view overlay hm-white-slight mb-1-half">
-                                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%28119%29.jpg" class="img-fluid" alt="Post">
-                                        <a>
-                                            <div class="mask waves-effect waves-light"></div>
-                                        </a>
-                                    </div>
-
-                                </div>
-                                <!--/First column-->
-
-                                <!--Second column-->
-                                <div class="col-8 mb-1">
-
-                                    <!--Post data-->
-                                    <div class="mb-2-half font-thin">
-                                        <p class="text-muted float-left"><i class="fa fa-clock-o"></i> 18/01/2017</p>
-                                        <span class="text-muted float-right"><i class="fa fa-comments-o"></i> 190</span>
-                                    </div>
-
-                                    <a href="#!" class="text-hover font-thin">This is news title</a>
-
-                                </div>
-                                <!--/Second column-->
-
-                            </div>
-                            <!--/Third row-->
-
-                        </div>
-
-                        <div class="post-border">
-
-                            <!--Fourth row-->
-                            <div class="row">
-
-                                <!--First column-->
-                                <div class="col-4">
-
-                                    <!--Image-->
-                                    <div class="view overlay hm-white-slight mb-1-half">
-                                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%2892%29.jpg" class="img-fluid" alt="Post">
-                                        <a>
-                                            <div class="mask waves-effect waves-light"></div>
-                                        </a>
-                                    </div>
-
-                                </div>
-                                <!--/First column-->
-
-                                <!--Second column-->
-                                <div class="col-8 mb-1">
-
-                                    <!--Post data-->
-                                    <div class="mb-2-half font-thin">
-                                        <p class="text-muted float-left"><i class="fa fa-clock-o"></i> 17/01/2017</p>
-                                        <span class="text-muted float-right"><i class="fa fa-comments-o"></i> 278</span>
-                                    </div>
-
-                                    <a href="#!" class="text-hover font-thin">This is news title</a>
-
-                                </div>
-                                <!--/Second column-->
-
-                            </div>
-                            <!--/Fourth row-->
-
-                        </div>
-
-                        <div class="post-border">
-
-                            <!--Fifth row-->
-                            <div class="row">
-
-                                <!--First column-->
-                                <div class="col-4">
-
-                                    <!--Image-->
-                                    <div class="view overlay hm-white-slight mb-1-half">
-                                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%28132%29.jpg" class="img-fluid" alt="Post">
-                                        <a>
-                                            <div class="mask waves-effect waves-light"></div>
-                                        </a>
-                                    </div>
-
-                                </div>
-                                <!--/First column-->
-
-                                <!--Second column-->
-                                <div class="col-8 mb-1">
-
-                                    <!--Post data-->
-                                    <div class="mb-2-half font-thin">
-                                        <p class="text-muted float-left"><i class="fa fa-clock-o"></i> 16/01/2017</p>
-                                        <span class="text-muted float-right"><i class="fa fa-comments-o"></i> 321</span>
-                                    </div>
-
-                                    <a href="#!" class="text-hover font-thin">This is news title</a>
-
-                                </div>
-                                <!--/Second column-->
-
-                            </div>
-                            <!--/Fifth row-->
-
-                        </div>
-
-                    </section>
-                    <!--Section: Popular posts-->
-
-                    <div class="divider-new wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
-                        <h3 class="h3-responsive">Archive</h3>
-                    </div>
-
-                    <!--Archive-->
-                    <section class="archive wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
-
-                        <!--First row-->
-                        <div class="row">
-
-                            <!--First column-->
-                            <div class="col-md-12 text-center">
-
-                                <!--List-->
-                                <ul>
-                                    <li>
-                                        <h5><a href="#!">August 2016</a></h5>
-                                    </li>
-                                    <li>
-                                        <h5><a href="#!">July 2016</a></h5>
-                                    </li>
-                                    <li>
-                                        <h5><a href="#!">June 2016</a></h5>
-                                    </li>
-                                    <li>
-                                        <h5><a href="#!">May 2016</a></h5>
-                                    </li>
-                                    <li>
-                                        <h5><a href="#!">April 2016</a></h5>
-                                    </li>
-                                </ul>
-                                <!--List-->
-
-                            </div>
-                            <!--First column-->
-
-                        </div>
-                        <!--/First row-->
-
-                    </section>
-                    <!--/Archive-->
+                    
 
                     <div class="divider-new wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
                         <h3 class="h3-responsive">Follow @Nancy</h3>
@@ -1089,48 +375,6 @@
             <!--/Second row-->
 
         </div>
-
-<div class="container">
-  <div class="row">
-    <% Post.all.each do |post| %>
-
-    <!--Main column-->
-    <div class="col-md-8">
-
-      <!--Post-->
-      <div class="post-wrapper">
-        <!--Post data-->
-        <h1 class="h1-responsive"><%= post.title.capitalize %></h1>
-        <h5>Written by <a href=""><%= post.user.first_name.capitalize %> <%= post.user.last_name.capitalize %> </a>, <%= post.created_at.strftime("%B %d, %Y")  %></h5>
-
-        <br>
-
-        <!--Featured image -->
-        <div class="view overlay hm-white-light z-depth-1-half wow zoomIn" data-wow-offset="5">
-          <%= image_tag(post.image, class: "img-responsive" )%>
-          <div class="mask">
-
-          </div>
-        </div>
-
-        <br>
-
-        <!--Post excerpt-->
-        <p><%= truncate(post.content, length: 300) %></p>
-
-        <!--"Read more" button-->
-        <%= link_to "See more", post, class: "btn btn-lg btn-outline-white indigo wow zoomInUp" %>
-      </div>
-      <!--/.Post-->
-
-      <hr>
-
-    </div>
-    <% end %>
-
-  </div>
-
-</div>
 
 <!--/.Main layout-->
 

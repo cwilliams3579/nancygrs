@@ -434,13 +434,6 @@ $orange-grad: #fc4a1a, #f7b733;
   color: -webkit-linear-gradient(#fc4a1a, #f7b733) !important;
   background-color: $orange-grad;
 }
-.navbar, #footer {
-  background: $indigo;
-}
-
-#footer, .side-nav {
-  background: #29448B !important;
-}
 
 .fa-user, #fa-envelope, #fa-phone, #fa-map-marker, #fa-lock, .fa-lock, .fa-tag, .gallery-text {
   // font-size: 72px;
@@ -464,9 +457,9 @@ $orange-grad: #fc4a1a, #f7b733;
   background-color: #29448B !important;
 }
 
-.indigo-skin .side-nav .collapsible li .collapsible-header.active {
-  background-color: -webkit-linear-gradient(#fc4a1a, #f7b733) !important;
-}
+// .indigo-skin .side-nav .collapsible li .collapsible-header.active {
+//   background-color: -webkit-linear-gradient(#fc4a1a, #f7b733) !important;
+// }
 
 .center {
   text-align: center !important;
@@ -474,4 +467,33 @@ $orange-grad: #fc4a1a, #f7b733;
 
 .pull-left {
   float: left !important;
+}
+
+
+.social a:hover,
+.social a:focus {
+  // outline: 0;
+  // background-color:#fc4a1a !important;
+
+  background: -webkit-linear-gradient(#fc4a1a, #f7b733);
+  background: -moz-linear-gradient(#fc4a1a, #f7b733);
+  background: -o-linear-gradient(#fc4a1a, #f7b733);
+  background: linear-gradient(#fc4a1a, #f7b733);
+  -webkit-transition: background 1s ease-out;
+  -moz-transition: background 1s ease-out;
+  -o-transition: background 1s ease-out;
+  transition: background 1s ease-out;
+  border: 1px solid #fff;
+  cursor:pointer;
+
+}
+
+.page-footer {
+  background-image: url(nancy-logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+ }
+ .side-nav {
+   background: #29448B !important;
 }
