@@ -1,7 +1,7 @@
 class Exercise < ApplicationRecord
   mount_uploader :image, ImageUploader
   acts_as_votable
-  ratyrate_rateable "title"
+  # ratyrate_rateable "title"
   belongs_to :user
   has_many :reviews, dependent: :destroy
   validates :title, :workout, :workout_date, presence: true
