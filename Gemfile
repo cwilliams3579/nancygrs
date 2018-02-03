@@ -43,7 +43,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'acts_as_votable', '~> 0.10.0'
-gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'bootstrap', '~> 4.0'
 gem 'devise'
 gem 'high_voltage'
 gem 'ratyrate'

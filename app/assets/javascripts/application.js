@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-// require "tether"
+//= require jquery.raty
+//= require ratyrate
+//= require "tether"
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .

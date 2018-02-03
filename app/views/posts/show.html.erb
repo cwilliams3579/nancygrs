@@ -18,73 +18,31 @@
       <!--Post data-->
       <div class="jumbotron">
         <h2><a><%= @post.title %></a></h2>
-        <p>Written by <%= @post.user.first_name.capitalize %> <%= @post.user.last_name.capitalize %>, <%= @post.created_at.strftime("%B %d, %Y") %></p>
-
-        <!--Social shares-->
-        <div class="social-counters ">
-
-          <!--Facebook-->
-          <a class="btn btn-fb ">
-            <i class="fa fa-facebook left "></i>
-            <span class="hidden-md-down ">Facebook</span>
-          </a>
-          <span class="counter ">46</span>
-
-          <!--Twitter-->
-          <a class="btn btn-tw ">
-            <i class="fa fa-twitter left "></i>
-            <span class="hidden-md-down ">Twitter</span>
-          </a>
-          <span class="counter ">22</span>
-
-          <!--Google+-->
-          <a class="btn btn-gplus ">
-            <i class="fa fa-google-plus left "></i>
-            <span class="hidden-md-down ">Google+</span>
-          </a>
-          <span class="counter ">31</span>
-
-          <!--Comments-->
-          <a class="btn btn-default ">
-            <i class="fa fa-comments-o left "></i>
-            <span class="hidden-md-down ">Comments</span>
-          </a>
-          <span class="counter ">18</span>
-
-        </div>
-        <!--/.Social shares-->
-
+        <p>
+          Posted by <%= @post.user.first_name.capitalize %> <%= @post.user.last_name.capitalize %>, <%= @post.created_at.strftime("%B %d, %Y") %></p>
+        <p>
+          <%= @post.content %>
+        </p>
+        <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-outline-white indigo" %>
       </div>
       <!--/Post data-->
-
-      <!--Excerpt-->
-      <div class="excerpt">
-        <p><%= @post.content %></p>
-        <%= link_to 'Edit', edit_post_path(@post) %> |
-        <%= link_to 'Back', posts_path %>
-      </div>
     </div>
   </div>
   <!--/First row-->
   <hr>
-
+  
 </section>
 <!--/Section: Blog v.4-->
 <div class="container">
   <div class="row">
     <div class="col-md-12">
       <div class="panel panel-primary">
-        <div class="panel-heading">
-          <span class="fa fa-comment-o"></span> Chat
-          <div class="btn-group pull-right">
-
-          </div>
-        </div>
+      
         <div class="panel-body">
           <ul class="chat">
             <li class="left clearfix">
               <span class="chat-img pull-left">
-                <!-- <img src="http://placehold.it/50/55C1E7/fff&text=JS" alt="User Avatar" class="rounded-circle" /> -->
+                <img src="http://placehold.it/50/55C1E7/fff&text=JS" alt="User Avatar" class="rounded-circle" />
               </span>
               <div class="chat-body clearfix">
                 <div class="header">
@@ -102,7 +60,7 @@
             <div class="input-group">
               <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
               <span class="input-group-btn">
-                <button class="btn green-gradient btn-sm" id="btn-chat">
+                <button class="btn btn-outline-white indigo btn-lg" id="btn-chat">
                   Send</button>
                 </span>
               </div>
@@ -112,3 +70,5 @@
       </div>
     </div>
     <br><br>
+    
+    <%= link_to '', posts_path, class: "fa fa-hand-o-left faa-horizontal animated fa-2x fa-fonts" %>

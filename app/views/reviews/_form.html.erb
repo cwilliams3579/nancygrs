@@ -1,15 +1,10 @@
-<br><br><br><br><br><br>
+<br><br><br><br><br>
 <div class="container-small">
   <div class="card">
     <div class="card-block">
       <div class="form-header indigo btn-outline-white">
         <h3>
-          <i class="fa fa-star faa-spin animated-hover fa-fonts" aria-label="true"></i>
-          <i class="fa fa-star faa-spin animated-hover fa-fonts" aria-label="true"></i>
-          <i class="fa fa-star faa-spin animated-hover fa-fonts" aria-label="true"></i>
-          <i class="fa fa-star faa-spin animated-hover fa-fonts" aria-label="true"></i>
-          <i class="fa fa-star faa-spin animated-hover fa-fonts" aria-label="true"></i>
-        
+            Review
         </h3>
       </div>
       <%= form_for([@exercise, @review]) do |f| %>
@@ -25,11 +20,8 @@
           </div>
         <% end %>
 
-        <div class="md-form">
-          <i class="fa fa-star fa-2x prefix fa-fonts" id="review-star" aria-hidden="true"></i>
-          <%= f.number_field :rating %>
-
-          
+        <div class="center" data-turbolinks="false">
+          <div id="star-rating" data-score=<%= review.rating %>></div>
         </div>
 
         <div class="md-form">
@@ -46,3 +38,10 @@
 </div>
 <br><br>
 <%= link_to "", exercises_path, class: "fa fa-hand-o-left fa-2x faa-horizontal animated fa-fonts" %>
+
+<script type="text/javascript">
+  $('#star-rating').raty({
+    path: 'https://s3.amazonaws.com/yelp-clone-rails/stars',
+    scoreName: 'review[rating]'
+  });
+</script>

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" data-turbolinks="false">
   <!--Section: Magazine v.2-->
   <section class="section magazine-section">
 
@@ -18,23 +18,34 @@
 
           <!--Image-->
           <div class="view overlay hm-white-slight">
+            <div class="news-data form-input">
+              <small><strong class="form-input"><i class="fa fa-clock-o fa-lg"></i>&nbsp; Posted  <%= time_ago_in_words(@exercise.created_at) %> ago</strong></small>
+              
+            </div>
             <%= image_tag @exercise.image.url, class: "img-fluid" if @exercise.image? %>
             <!-- <iframe width="100%" height="480" src="https://www.youtube.com/embed/7qHInWs_3mY" frameborder="0" allowfullscreen></iframe> -->
           </div>
 
           <!--Excerpt-->
-          <div class="news-data form-input">
-            <p><strong class="form-input"><i class="fa fa-clock-o fa-lg"></i>&nbsp; Posted  <%= time_ago_in_words(@exercise.created_at) %> ago</strong></p>
-            <h3 class="h3-responsive center"> <i class="fa fa-line-chart fa-fonts"></i>  &nbsp;<%= @exercise.title %></h3>
-          </div>
+              <h3 class="h3-responsive center"> 
+                <%= @exercise.title %>
+              </h3>
+              <div class="btn-group">
+                <p class="text-left">
+                  <i class="fa fa-clock-o faa-tada animated"></i> &nbsp; Duration
+                  <%= @exercise.duration_in_min %> minutes
+                </p>&nbsp; &nbsp;
+                <% if current_user && current_user.admin? %>
+                  <%= link_to "", edit_exercise_path(@exercise), class: "fa fa-pencil fa-fonts" %>&nbsp; &nbsp;
+                    <%= link_to "", @exercise, class: "fa fa-trash text-danger", :method => :delete, :data => {:confirm => "You Sure?"} %>
+                      <% end %>
+              </div>  
+               
+              </div><br>
+              <p class="black-text"><%= @exercise.workout %></p>
           
-          <p class="black-text"><%= @exercise.workout %></p>
-
-          <p class="form-input">
-            <i class="fa fa-clock-o faa-tada animated"></i> &nbsp; Duration <%= @exercise.duration_in_min %> minutes
-          </p>
-
-        </div>
+          
+         
         <!--/ Exercise -->
 
       </div>
@@ -55,20 +66,22 @@
 
                   <!--Image-->
                   <div class="view overlay hm-white-slight">
-                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(77).jpg">
+                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(77).jpg" class="rounded-circle img-fluid">
                     <a>
                       <div class="mask"></div>
                     </a>
                   </div>
                   <!--Excerpt-->
-                  <div class="col-md-9">
-                    <div class="star-rating" data-score= <%= link_to @avg_rating, new_exercise_review_path(@exercise), data: { turbolinks: false } %> ></div>
+                  <div class="container">
+                    <ul>
+                      <li class="star-rating" data-score=<%= @avg_rating %> ></li>
+                    </ul>
                     <p>
                       <%= truncate(review.comment, length: 300) %>
-                      <i class="fa fa-angle-right"></i>
                     </p>
+                    
                   </div>
-
+                    
                 </div>
               </div>
               <!--/Small news-->
@@ -81,16 +94,11 @@
         <% end %>
 
         <% if @reviews.any? %>
-          <%= link_to '',  edit_exercise_review_path(@exercise), class: "fa fa-pencil fa-2x faa-wrench animated-hover fa-fonts" %>&nbsp; &nbsp; &nbsp;
+          <%= link_to 'Edit',  edit_exercise_review_path(@exercise), class: "btn btn-outline-white indigo waves-effect waves-light" %>&nbsp; &nbsp; &nbsp;
         <% end %>
       </div>
       <!--/First row-->
-      <% if current_user && current_user.admin? %>
-        <div class="btn-group mx-auto">
-          <%= link_to "", edit_exercise_path(@exercise), class: "fa fa-pencil fa-2x faa-horizontal animated-hover fa-fonts" %>&nbsp; &nbsp; &nbsp;
-          <%= link_to "", @exercise, class: "fa fa-trash fa-2x faa-shake animated-hover fa-fonts", :method => :delete, :data => {:confirm => "You Sure?"} %>
-        </div>
-        <% end %>
+     
 
     </section>
     <!--/Section: Magazine v.2-->
@@ -102,7 +110,7 @@
   $('.star-rating').raty({
     path: 'https://s3.amazonaws.com/yelp-clone-rails/stars',
     readOnly: true,
-    score: function() {
+    score: function () {
       return $(this).attr('data-score')
     }
   });

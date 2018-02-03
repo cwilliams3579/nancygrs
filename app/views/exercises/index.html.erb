@@ -33,7 +33,7 @@
               <p><%= exercise.workout %></p>
               <p>by <a><strong><%= exercise.user.first_name.capitalize %> <%= exercise.user.last_name.capitalize %></strong></a>, <%= time_ago_in_words(exercise.created_at) %> ago</p>
               <span class="left"><i class="fa fa-calendar"></i> <%= exercise.workout_date %></span>
-              <%= link_to 'See more', exercise, toggle: "tooltip", placement: "top", title: "Quick Look", class: "btn btn-block btn-outline-white indigo waves-effect waves-light" %>
+              <%= link_to 'See more', exercise, toggle: "tooltip", placement: "top", title: "Quick Look", class: "btn btn-outline-white indigo waves-effect waves-light" %>
           </div>
           <!--/Second column-->
 

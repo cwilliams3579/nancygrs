@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= content_for?(:title) ? yield(:title) : "Generationsrs" %></title>
   <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Generationsrs" %>">
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'track' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
   <%= csrf_meta_tags %>
   <link href="https://fonts.googleapis.com/css?family=Pacifico|Ubuntu" rel="stylesheet">
