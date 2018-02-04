@@ -28,6 +28,6 @@ Contributing
 
 Credits
 -------
-
+Cleveland Williams
 License
 -------

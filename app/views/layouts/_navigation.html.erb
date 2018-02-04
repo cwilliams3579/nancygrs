@@ -17,10 +17,10 @@
            <!--Social-->
            <li>
                <ul class="social">
-                   <li><a target="_blank" href="https://www.facebook.com/GenerationsRehabServicesInternational/" class="icons-sm fb-ic wow fadeInLeftBig" data-wow-delay="1.6s"><i class="fa fa-facebook"> </i></a></li>
-                   <li><a target="_blank" href="#" class="icons-sm pin-ic wow fadeInLeftBig" data-wow-delay="1.4s"><i class="fa fa-pinterest"> </i></a></li>
-                   <li><a target="_blank" href="https://plus.google.com/u/0/collections/" class="icons-sm gplus-ic wow fadeInLeftBig" data-wow-delay="1.2s"><i class="fa fa-google-plus"> </i></a></li>
-                   <li><a target="_blank" href="#" class="icons-sm tw-ic wow fadeInLeftBig" data-wow-delay="1s"><i class="fa fa-twitter"> </i></a></li>
+                   <li><a target="_blank" href="https://www.facebook.com/GenerationsRehabServicesInternational/" class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a></li>
+                   <li><a target="_blank" href="#" class="icons-sm pin-ic"><i class="fa fa-pinterest"> </i></a></li>
+                   <li><a target="_blank" href="https://plus.google.com/u/0/collections/" class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a></li>
+                   <li><a target="_blank" href="#" class="icons-sm tw-ic"><i class="fa fa-twitter"> </i></a></li>
                </ul>
            </li>
            <!--/Social-->
@@ -36,7 +36,7 @@
            <!-- Side navigation links -->
            <li>
                <ul class="collapsible collapsible-accordion">
-                   <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-line-chart faa-float animated-hover"></i> Exercise<i class="fa fa-angle-down rotate-icon"></i></a>
+                   <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-line-chart"></i> Exercise<i class="fa fa-angle-down rotate-icon"></i></a>
                        <div class="collapsible-body">
                            <ul>
                               <li>
@@ -53,7 +53,7 @@
 
                    <li>
                      <a class="collapsible-header waves-effect arrow-r ">
-                       <i class="fa fa-camera-retro faa-tada animated-hover"></i> Gallery<i class="fa fa-angle-down rotate-icon"></i>
+                       <i class="fa fa-camera-retro"></i> Gallery<i class="fa fa-angle-down rotate-icon"></i>
                      </a>
                        <div class="collapsible-body">
                            <ul>
@@ -145,7 +145,7 @@
            <!-- Breadcrumb-->
            <div class="breadcrumb-dn mr-auto">
              &nbsp; &nbsp; &nbsp;<a href="/"><i class="fa fa-hospital-o fa-2x "></i></a>&nbsp; &nbsp;
-             <%= link_to "Generations Rehab Services", root_path, class: 'navbar-brand wow jello' %>
+             <%= link_to "Generations Rehab Services", root_path, class: "navbar-brand" %>
            </div>
            <ul class="nav navbar-nav ml-auto flex-row">
       
@@ -161,19 +161,19 @@
             <% if user_signed_in? %>
               <li class="nav-item">
 
-                <a href="/users/edit" class="nav-link "><i class="fa fa-user-secret faa-tada animated-hover"></i> <span class="hidden-sm-down"><%= current_user.first_name.capitalize %></span></a>
+                <a href="/users/edit" class="nav-link "><i class="fa fa-user-secret"></i> <span class="hidden-sm-down"><%= current_user.first_name.capitalize %></span></a>
               </li>&nbsp; &nbsp;
               <li class="nav-item">
-                <a class="nav-link" rel="nofollow" data-method="delete" href="/users/sign_out"><i class="fa fa-sign-out faa-tada animated-hover"></i> <span class="hidden-sm-down">Sign Out</span></a>
+                <a class="nav-link" rel="nofollow" data-method="delete" href="/users/sign_out"><i class="fa fa-sign-out"></i> <span class="hidden-sm-down">Sign Out</span></a>
               </li>&nbsp; &nbsp;
             <% else %>
               <li class="nav-item">
                 <a class="nav-link" data-toggle="modal" data-target="#modal-register">
-                  <i class="fa fa-user-plus faa-tada animated-hover"></i> <span class="hidden-sm-down">Sign Up</span>
+                  <i class="fa fa-user-plus"></i> <span class="hidden-sm-down">Sign Up</span>
                 </a>
               </li>&nbsp; &nbsp;
               <li class="nav-item">
-                <a class="nav-link " data-toggle="modal" data-target="#modal-login"><i class="fa fa-sign-in faa-tada animated-hover"></i> <span class="hidden-sm-down">Sign In</span>
+                <a class="nav-link " data-toggle="modal" data-target="#modal-login"><i class="fa fa-sign-in"></i> <span class="hidden-sm-down">Sign In</span>
                 </a>
               </li>&nbsp; &nbsp;
             <% end %>
