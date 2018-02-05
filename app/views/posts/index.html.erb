@@ -1,8 +1,13 @@
-<% content_for :title do %>Blog<% end %>
-<br><br><br><br><br>
-<!--Main layout-->
+<% content_for :title do %>Blog
+    <% end %>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!--Main layout-->
 
-<div class="container">
+        <div class="container">
 
             <!--First row-->
             <div class="row mt-1">
@@ -32,7 +37,7 @@
                                 </div>
                                 <!--Caption-->
                                 <div class="carousel-caption caption-2">
-                                    <div class="animated fadeInDown">
+                                    <div>
                                         <h2 class="h2-responsive"> My favourite photos from last trip to Europe</h2>
                                     </div>
                                 </div>
@@ -50,7 +55,7 @@
                                 </div>
                                 <!--Caption-->
                                 <div class="carousel-caption caption-2">
-                                    <div class="animated fadeInDown">
+                                    <div>
                                         <h2 class="h2-responsive">My weekend in the nature</h2>
                                     </div>
                                 </div>
@@ -68,7 +73,7 @@
                                 </div>
                                 <!--Caption-->
                                 <div class="carousel-caption caption-2">
-                                    <div class="animated fadeInDown">
+                                    <div>
                                         <h2 class="h2-responsive">Tatras - the best choice for holiday</h2>
                                     </div>
                                 </div>
@@ -110,53 +115,60 @@
 
                     <!--Section: Design-->
                     <section class="section text-center text-lg-left">
-                        
+
                         <% Post.all.each do |post| %>
-                        <!--First row-->
-                        <div class="row mb-3">
+                            <!--First row-->
+                            <div class="row mb-3">
 
-                            <!--First column-->
-                            <div class="col-lg-5 mb-1-half">
+                                <!--First column-->
+                                <div class="col-lg-5 mb-1-half">
 
-                                <!--Image-->
-                                <div class="view hm-white-slight">
-                                    <!-- <img src="https://mdbootstrap.com/img/Photos/Horizontal/Things/4-col/img%20%286%29.jpg" class="img-fluid" alt="Post Image"> -->
-                                    <%= image_tag( post.image, class: "img-fluid", alt: "Post Image" ) %>
-                                    <div class="mask waves-effect waves-light"></div>
+                                    <!--Image-->
+                                    <div class="view hm-white-slight">
+                                        <!-- <img src="https://mdbootstrap.com/img/Photos/Horizontal/Things/4-col/img%20%286%29.jpg" class="img-fluid" alt="Post Image"> -->
+                                        <%= image_tag( post.image, class: "img-fluid", alt: "Post Image" ) %>
+                                            <div class="mask waves-effect waves-light"></div>
+                                    </div>
+                                    <!--/Image-->
+
                                 </div>
-                                <!--/Image-->
+                                <!--/First column-->
 
-                            </div>
-                            <!--/First column-->
-
-                            <!--Second column-->
-                            <div class="col-lg-7">
+                                <!--Second column-->
+                                <div class="col-lg-7">
                                     <!--Excerpt-->
-                                    <h6 class="text-muted mb-1"><%= post.created_at.strftime("%m/%d/%Y")  %></h6>
-                                    <h4 class="font-up mb-1 text-muted font-thin"><%= post.title.capitalize %></h4>
-                                    <p class="text-muted font-thin"><%= truncate(post.content, length: 200) %></p>
+                                    <h6 class="text-muted mb-1">
+                                        <%= post.created_at.strftime("%m/%d/%Y")  %>
+                                    </h6>
+                                    <h4 class="font-up mb-1 text-muted font-thin">
+                                        <%= post.title.capitalize %>
+                                    </h4>
+                                    <p class="text-muted font-thin">
+                                        <%= truncate(post.content, length: 200) %>
+                                    </p>
                                     <%= link_to "Read more", post, class: "btn btn-outline-white indigo waves-effect" %>
-                                    <!--/Excerpt-->
+                                        <!--/Excerpt-->
 
                                 </div>
                                 <!--/Second column-->
                             </div>
                             <!--/First row-->
                             <% end %>
-                    
+
                     </section>
                     <!--/Section: Design-->
-                   
+
                     <!--Pagination dark grey-->
                     <nav>
-                       <ul class="pagination pg-darkgrey flex-center mt-5 mb-5">
-                      
-                           <li><%= paginate @posts %></li>
-                       </ul>
-                       
+                        <ul class="pagination pg-darkgrey flex-center mt-5 mb-5">
+
+                            <li>
+                                <%= paginate @posts %>
+                            </li>
+                        </ul>
+
                     </nav>
                     <!--/Pagination dark grey-->
-
 
                 </div>
                 <!--/Newsfeed-->
@@ -165,7 +177,7 @@
                 <div class="col-lg-4">
 
                     <!--Author card-->
-                    <section class="wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+                    <section style="visibility: visible;">
 
                         <!--Card-->
                         <div class="card author-card">
@@ -179,7 +191,8 @@
                                 <!--Name-->
                                 <h4 class="card-title font-up text-center">Nancy Destin</h4>
                                 <!--Description-->
-                                <p class="font-thin">Hello, I'm Nancy I've 22 years old and my biggest passion is physical therapy. I love travel around the world and take photos of wild animals, landscapes and local people.</p>
+                                <p class="font-thin">Hello, I'm Nancy I've 22 years old and my biggest passion is physical therapy. I love travel
+                                    around the world and take photos of wild animals, landscapes and local people.</p>
 
                                 <div class="mx-auto">
                                     <!--Dribbble-->
@@ -205,12 +218,12 @@
                     <!--/Author card-->
 
 
-                    <div class="divider-new wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
+                    <div class="divider-new" style="visibility: visible;">
                         <h3>Newsletter</h3>
                     </div>
 
                     <!--Newsletter-->
-                    <section class="wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
+                    <section class="" style="visibility: visible;">
 
                         <!--First row-->
                         <div class="row">
@@ -261,14 +274,12 @@
                     </section>
                     <!--/Newsletter-->
 
-                    
-
-                    <div class="divider-new wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
+                    <div class="divider-new" style="visibility: visible;">
                         <h3 class="h3-responsive">Follow @Nancy</h3>
                     </div>
 
                     <!--Instagram-->
-                    <section class="sidebar-imgs wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
+                    <section class="sidebar-imgs" style="visibility: visible;">
 
                         <!--First row-->
                         <div class="row">
@@ -303,7 +314,9 @@
                                         </div>
                                     </li>
 
-                                    <div class="hidden-xs-down no-height"><br></div>
+                                    <div class="hidden-xs-down no-height">
+                                        <br>
+                                    </div>
 
                                     <li>
                                         <div class="view overlay hm-white-slight">
@@ -330,7 +343,9 @@
                                         </div>
                                     </li>
 
-                                    <div class="hidden-xs-down no-height"><br></div>
+                                    <div class="hidden-xs-down no-height">
+                                        <br>
+                                    </div>
 
                                     <li>
                                         <div class="view overlay hm-white-slight">
@@ -359,8 +374,8 @@
                                 </ul>
                                 <!--/Instagram photos -->
 
-                           </div>
-                           <!--/First column-->
+                            </div>
+                            <!--/First column-->
 
                         </div>
                         <!--/First row-->
@@ -376,8 +391,8 @@
 
         </div>
 
-<!--/.Main layout-->
+        <!--/.Main layout-->
 
-<div class="center">
-        <%= link_to ' New Post', new_post_path, class: "btn btn-lg btn-outline-white indigo" %>
-</div>
+        <div class="center">
+            <%= link_to ' New Post', new_post_path, class: "btn btn-lg btn-outline-white indigo" %>
+        </div>

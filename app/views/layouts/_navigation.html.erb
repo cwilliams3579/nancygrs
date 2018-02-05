@@ -1,184 +1,234 @@
 <%= render 'modals/contact' %>
-<%= render 'modals/register' %>
-<%= render 'modals/login' %>
-<!--Double navigation-->
-   <header>
-       <!-- Sidebar navigation -->
-       <ul id="slide-out" class="side-nav fixed sn-bg-1 custom-scrollbar">
-           <!-- Logo -->
-           <li>
-               <div class="logo-wrapper  hm-zoom waves-light wow rubberBand animated">
-                 <%= link_to (image_tag("nancy-logo.png")), id:"nancy-logo", rel: "gallery" %>
+  <%= render 'modals/register' %>
+    <%= render 'modals/login' %>
+      <!--Double navigation-->
+      <header>
+        <!-- Sidebar navigation -->
+        <ul id="slide-out" class="side-nav fixed sn-bg-1 custom-scrollbar">
+          <!-- Logo -->
+          <li>
+            <div class="logo-wrapper  hm-zoom waves-light wow rubberBand animated">
+              <%= link_to (image_tag("nancy-logo.png")), id:"nancy-logo", rel: "gallery" %>
 
-               </div>
+            </div>
 
-           </li><br>
-           <!--/. Logo -->
-           <!--Social-->
-           <li>
-               <ul class="social">
-                   <li><a target="_blank" href="https://www.facebook.com/GenerationsRehabServicesInternational/" class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a></li>
-                   <li><a target="_blank" href="#" class="icons-sm pin-ic"><i class="fa fa-pinterest"> </i></a></li>
-                   <li><a target="_blank" href="https://plus.google.com/u/0/collections/" class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a></li>
-                   <li><a target="_blank" href="#" class="icons-sm tw-ic"><i class="fa fa-twitter"> </i></a></li>
-               </ul>
-           </li>
-           <!--/Social-->
-           <!--Search Form-->
-           <li>
-               <form class="search-form" role="search">
-                   <div class="form-group waves-light">
-                       <input type="text" class="form-control" placeholder="Search">
-                   </div>
-               </form>
-           </li>
-           <!--/.Search Form-->
-           <!-- Side navigation links -->
-           <li>
-               <ul class="collapsible collapsible-accordion">
-                   <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-line-chart"></i> Exercise<i class="fa fa-angle-down rotate-icon"></i></a>
-                       <div class="collapsible-body">
-                           <ul>
-                              <li>
-                                <a href="/exercises" class="waves-effect">Exercise</a>
-                              </li>
-                              <% if user_signed_in? && (current_user.admin?) %>
-                              <li>
-                                <%= link_to 'New Exercise', new_exercise_path(current_user), class: "waves-effect" %>
-                              </li>
-                              <% end %>
-                           </ul>
-                       </div>
-                   </li>
+          </li>
+          <br>
+          <!--/. Logo -->
+          <!--Social-->
+          <li>
+            <ul class="social">
+              <li>
+                <a target="_blank" href="https://www.facebook.com/GenerationsRehabServicesInternational/" class="icons-sm fb-ic">
+                  <i class="fa fa-facebook"> </i>
+                </a>
+              </li>
+              <li>
+                <a target="_blank" href="#" class="icons-sm pin-ic">
+                  <i class="fa fa-pinterest"> </i>
+                </a>
+              </li>
+              <li>
+                <a target="_blank" href="https://plus.google.com/u/0/collections/" class="icons-sm gplus-ic">
+                  <i class="fa fa-google-plus"> </i>
+                </a>
+              </li>
+              <li>
+                <a target="_blank" href="#" class="icons-sm tw-ic">
+                  <i class="fa fa-twitter"> </i>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!--/Social-->
+          <!--Search Form-->
+          <li>
+            <form class="search-form" role="search">
+              <div class="form-group waves-light">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+            </form>
+          </li>
+          <!--/.Search Form-->
+          <!-- Side navigation links -->
+          <li>
+            <ul class="collapsible collapsible-accordion">
+              <li>
+                <a class="collapsible-header waves-effect arrow-r">
+                  <i class="fa fa-line-chart"></i> Exercise
+                  <i class="fa fa-angle-down rotate-icon"></i>
+                </a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li>
+                      <a href="/exercises" class="waves-effect">Exercise</a>
+                    </li>
+                    <% if user_signed_in? && (current_user.admin?) %>
+                      <li>
+                        <%= link_to 'New Exercise', new_exercise_path(current_user), class: "waves-effect" %>
+                      </li>
+                      <% end %>
+                  </ul>
+                </div>
+              </li>
 
-                   <li>
-                     <a class="collapsible-header waves-effect arrow-r ">
-                       <i class="fa fa-camera-retro"></i> Gallery<i class="fa fa-angle-down rotate-icon"></i>
-                     </a>
-                       <div class="collapsible-body">
-                           <ul>
-                               <li>
-                                 <a href="/pages/gallery" class="waves-effect">Gallery</a>
-                               </li>
-                               <% if user_signed_in? && (current_user.admin?) %>
-                               <li>
-                                 <a href="/posts/new" class="waves-effect">Upload</a>
-                               </li>
-                               <% end %>
-                           </ul>
-                       </div>
-                   </li>
+              <li>
+                <a class="collapsible-header waves-effect arrow-r ">
+                  <i class="fa fa-camera-retro"></i> Gallery
+                  <i class="fa fa-angle-down rotate-icon"></i>
+                </a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li>
+                      <a href="/pages/gallery" class="waves-effect">Gallery</a>
+                    </li>
+                    <% if user_signed_in? && (current_user.admin?) %>
+                      <li>
+                        <a href="/posts/new" class="waves-effect">Upload</a>
+                      </li>
+                      <% end %>
+                  </ul>
+                </div>
+              </li>
 
-                   <li>
-                     <a class="collapsible-header waves-effect arrow-r">
-                       <i class="fa fa-pencil faa-horizontal animated-hover"></i> Blog<i class="fa fa-angle-down rotate-icon"></i>
-                     </a>
-                       <div class="collapsible-body">
-                           <ul>
-                               <li>
-                                 <a href="/posts" class="waves-effect">Posts</a>
-                               </li>
-                               <% if user_signed_in? && (current_user.admin?) %>
-                               <li>
-                                 <a href="/posts/new" class="waves-effect">New Post</a>
-                               </li>
-                               <% end %>
-                           </ul>
-                       </div>
-                   </li>
-                   <li><a  class="collapsible-header waves-effect arrow-r"><i class="fa fa-eye faa-pulse animated-hover"></i> About US<i class="fa fa-angle-down rotate-icon"></i></a>
-                       <div class="collapsible-body">
-                           <ul>
-                               <li>
-                                 <a href="/pages/about" class="waves-effect">About US</a>
-                               </li>
-                           </ul>
-                       </div>
-                   </li>
-                   <li>
-                     <a class="collapsible-header waves-effect arrow-r">
-                       <i class="fa fa-envelope-o faa-shake animated-hover"></i> Contact<i class="fa fa-angle-down rotate-icon"></i>
-                     </a>
-                       <div class="collapsible-body">
-                           <ul>
-                             <li>
-                               <a href="/contacts/new" class="waves-effect">Write a message</a>
-                             </li>
-                               <li>
-                                 <a href="/pages/faq" class="waves-effect">FAQ</a>
-                               </li>
-                               <li>
-                                 <a href="/pages/privacy" class="waves-effect">Terms Of Service</a>
-                               </li>
-                           </ul>
-                       </div>
-                   </li>
-                   <li>
-                     <a class="collapsible-header waves-effect arrow-r">
-                       <i class="fa fa-question faa-bounce animated-hover"></i> FAQ<i class="fa fa-angle-down rotate-icon"></i>
-                     </a>
-                       <div class="collapsible-body">
-                           <ul>
-                               <li>
-                                 <a href="/pages/faq" class="waves-effect">FAQ</a>
-                               </li>
-                               <li>
-                                 <a href="/pages/privacy" class="waves-effect">Terms Of Service</a>
-                               </li>
-                           </ul>
-                       </div>
-                   </li>
-               </ul>
-           </li>
-           <!--/. Side navigation links -->
-           <div class="sidenav-bg mask-strong"></div><br>
-            <div class="fb-page" data-href="https://www.facebook.com/GenerationsRehabServicesInternational/" data-tabs="timeline" data-width="500" data-height="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/GenerationsRehabServicesInternational/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/GenerationsRehabServicesInternational/">Generations Rehab Services</a></blockquote>
-           </div>
-       </ul>
-       <!--/. Sidebar navigation -->
-       <!-- Navbar -->
-       <nav class="navbar fixed-top navbar-toggleable-md indigo scrolling-navbar double-nav">
-           <!-- SideNav slide-out button -->
-           <div class="float-xs-left">
-               <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars"></i></a>
-           </div>
-           <!-- Breadcrumb-->
-           <div class="breadcrumb-dn mr-auto">
-             &nbsp; &nbsp; &nbsp;<a href="/"><i class="fa fa-hospital-o fa-2x "></i></a>&nbsp; &nbsp;
-             <%= link_to "Generations Rehab Services", root_path, class: "navbar-brand" %>
-           </div>
-           <ul class="nav navbar-nav ml-auto flex-row">
-      
-             <li class="nav-item dropdown btn-group">
-                    <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-globe faa-spin animated-hover"></i><span class="hidden-sm-down"> Language</span></a>
-                    <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenu1">
-                        <a class="dropdown-item">English</a>
-                        <a class="dropdown-item">Creole</a>
-                        <a class="dropdown-item">French</a>
-                        <a class="dropdown-item">Spanish</a>
-                    </div>
-                </li>&nbsp; &nbsp;
+              <li>
+                <a class="collapsible-header waves-effect arrow-r">
+                  <i class="fa fa-pencil faa-horizontal animated-hover"></i> Blog
+                  <i class="fa fa-angle-down rotate-icon"></i>
+                </a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li>
+                      <a href="/posts" class="waves-effect">Posts</a>
+                    </li>
+                    <% if user_signed_in? && (current_user.admin?) %>
+                      <li>
+                        <a href="/posts/new" class="waves-effect">New Post</a>
+                      </li>
+                      <% end %>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a class="collapsible-header waves-effect arrow-r">
+                  <i class="fa fa-eye faa-pulse animated-hover"></i> About US
+                  <i class="fa fa-angle-down rotate-icon"></i>
+                </a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li>
+                      <a href="/pages/about" class="waves-effect">About US</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a class="collapsible-header waves-effect arrow-r">
+                  <i class="fa fa-envelope-o faa-shake animated-hover"></i> Contact
+                  <i class="fa fa-angle-down rotate-icon"></i>
+                </a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li>
+                      <a href="/contacts/new" class="waves-effect">Write a message</a>
+                    </li>
+                    <li>
+                      <a href="/pages/faq" class="waves-effect">FAQ</a>
+                    </li>
+                    <li>
+                      <a href="/pages/privacy" class="waves-effect">Terms Of Service</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a class="collapsible-header waves-effect arrow-r">
+                  <i class="fa fa-question faa-bounce animated-hover"></i> FAQ
+                  <i class="fa fa-angle-down rotate-icon"></i>
+                </a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li>
+                      <a href="/pages/faq" class="waves-effect">FAQ</a>
+                    </li>
+                    <li>
+                      <a href="/pages/privacy" class="waves-effect">Terms Of Service</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!--/. Side navigation links -->
+          <div class="sidenav-bg mask-strong"></div>
+          <br>
+          <div class="fb-page" data-href="https://www.facebook.com/GenerationsRehabServicesInternational/" data-tabs="timeline" data-width="500"
+            data-height="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false">
+            <blockquote cite="https://www.facebook.com/GenerationsRehabServicesInternational/" class="fb-xfbml-parse-ignore">
+              <a href="https://www.facebook.com/GenerationsRehabServicesInternational/">Generations Rehab Services</a>
+            </blockquote>
+          </div>
+        </ul>
+        <!--/. Sidebar navigation -->
+        <!-- Navbar -->
+        <nav class="navbar fixed-top navbar-toggleable-md indigo scrolling-navbar double-nav">
+          <!-- SideNav slide-out button -->
+          <div class="float-xs-left">
+            <a href="#" data-activates="slide-out" class="button-collapse">
+              <i class="fa fa-bars"></i>
+            </a>
+          </div>
+          <!-- Breadcrumb-->
+          <div class="breadcrumb-dn mr-auto">
+            &nbsp; &nbsp; &nbsp;
+            <a href="/">
+              <i class="fa fa-hospital-o fa-2x "></i>
+            </a>&nbsp; &nbsp;
+            <%= link_to "Generations Rehab Services", root_path, class: "navbar-brand" %>
+          </div>
+          <ul class="nav navbar-nav ml-auto flex-row">
+
+            <li class="nav-item dropdown btn-group">
+              <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-globe"></i>
+                <span class="hidden-sm-down"> Language</span>
+              </a>
+              <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenu1">
+                <a class="dropdown-item">English</a>
+                <a class="dropdown-item">Creole</a>
+                <a class="dropdown-item">French</a>
+                <a class="dropdown-item">Spanish</a>
+              </div>
+            </li>&nbsp; &nbsp;
+
             <% if user_signed_in? %>
               <li class="nav-item">
-
-                <a href="/users/edit" class="nav-link "><i class="fa fa-user-secret"></i> <span class="hidden-sm-down"><%= current_user.first_name.capitalize %></span></a>
+                <span class="hidden-sm-down">
+                  <%= link_to gravatar_for(current_user), edit_user_registration_path, size: 20, :class => 'gravatar' %>
+                </span>
               </li>&nbsp; &nbsp;
               <li class="nav-item">
-                <a class="nav-link" rel="nofollow" data-method="delete" href="/users/sign_out"><i class="fa fa-sign-out"></i> <span class="hidden-sm-down">Sign Out</span></a>
-              </li>&nbsp; &nbsp;
-            <% else %>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="modal" data-target="#modal-register">
-                  <i class="fa fa-user-plus"></i> <span class="hidden-sm-down">Sign Up</span>
+                <a class="nav-link" rel="nofollow" data-method="delete" href="/users/sign_out">
+                  <i class="fa fa-sign-out"></i>
+                  <span class="hidden-sm-down">Sign Out</span>
                 </a>
               </li>&nbsp; &nbsp;
-              <li class="nav-item">
-                <a class="nav-link " data-toggle="modal" data-target="#modal-login"><i class="fa fa-sign-in"></i> <span class="hidden-sm-down">Sign In</span>
-                </a>
-              </li>&nbsp; &nbsp;
-            <% end %>
-           </ul>
-       </nav>
-       <!-- /.Navbar -->
-   </header>
-   <!--/.Double navigation-->
+              <% else %>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#modal-register">
+                    <i class="fa fa-user-plus"></i>
+                    <span class="hidden-sm-down">Sign Up</span>
+                  </a>
+                </li>&nbsp; &nbsp;
+                <li class="nav-item">
+                  <a class="nav-link " data-toggle="modal" data-target="#modal-login">
+                    <i class="fa fa-sign-in"></i>
+                    <span class="hidden-sm-down">Sign In</span>
+                  </a>
+                </li>&nbsp; &nbsp;
+                <% end %>
+          </ul>
+        </nav>
+        <!-- /.Navbar -->
+      </header>
+      <!--/.Double navigation-->
